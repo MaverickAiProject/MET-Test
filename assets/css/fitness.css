@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+}
+
+:root {
+  /* colors */
+  --primary: #9bcb4e;
+  --primary-1: #d7f4a9;
+  --primary-2: #c1ec7c;
+  --primary-3: #80b42b;
+  --primary-4: #5e8d13;
+
+  --text-dark-100: #0a0a23;
+  --text-dark: #1c1b31;
+
+  --primary-grey: #c0c0c0;
+  --primary-grey-100: #cdcdcd;
+  --primary-grey-200: #dadada;
+  --primary-grey-300: #b4b4b4;
+  --primary-grey-400: #a7a7a7;
+
+  /* fonts */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+
+  /* utilities */
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-36: 2.255rem;
+  --fs-48: 3rem;
+  --fs-50: 3.125rem;
+  --fs-64: 4rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+/* fluid typography */
+h1 {
+  font-size: 3.5rem;
+  font-size: clamp(3.5rem, 3.4rem + 0.5vw, 4rem);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#app {
+  display: flex;
+}
+
+/*sidebar*/
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  background-color: #f1ead9;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+.sidebar-logo {
+  padding-left: 40px;
+}
+.sidebar-nav {
+  flex: 1;
+  margin-top: 80px;
+}
+.sidebar-image {
+  padding: 0px 40px;
+}
+/*nav*/
+.nav-links {
+  height: 100%;
+}
+.nav-links .nav-item {
+  padding: 20px 40px;
+  margin: 15px 0px;
+}
+.nav-links .nav-item.active {
+  background-color: var(--primary-2);
+  border-left: 5px solid var(--primary-4);
+}
+.nav-links .nav-item a {
+  text-decoration: none;
+  color: var(--text-dark-100);
+}
+
+/*calculator*/
+.calculator {
+  flex: 2;
+  background-color: #fef6e4;
+}
+.calculator .calc-body {
+  padding: 30px 40px;
+}
+
+.calculator .calc-body .calc-subheading {
+  margin-top: 40px;
+}
+.calculator .calc-body .calc-subheading p {
+  color: #a7a7a7;
+}
+
+/*Form*/
+.fitness-form {
+  margin-top: 40px;
+  border-radius: 8px;
+}
+.fitness-form .form-body .system p {
+  color: #a7a7a7;
+}
+.fitness-form .form-body .gender p {
+  color: #a7a7a7;
+}
+.fitness-form .form-body .weight-goal p {
+  color: #a7a7a7;
+}
+.fitness-form .form-body .activity p {
+  color: #a7a7a7;
+}
+.fitness-form .form-button {
+  margin-top: 30px;
+}
+
+input {
+  background-color: var(--primary-grey-200);
+  padding: 10px;
+  border: none;
+}
+button {
+  background-color: var(--primary-4);
+  border: none;
+  padding: 20px 0px;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+}
+.gender,
+.goal,
+.age,
+.height,
+.weight,
+.activity {
+  margin-top: 30px;
+}
+/* radio buttons*/
+.metric-buttons,
+.gender-buttons,
+.goal-buttons,
+.activity-buttons {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.metric-buttons input[type="radio"],
+.gender-buttons input[type="radio"],
+.goal-buttons input[type="radio"],
+.activity-buttons input[type="radio"] {
+  display: none;
+}
+.metric-buttons label,
+.gender-buttons label,
+.goal-buttons label {
+  display: inline-block;
+  background-color: #d1d1d1;
+  padding: 13px 60px;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.activity-buttons label {
+  display: inline-block;
+  background-color: #d1d1d1;
+  padding: 13px 43px;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.metric-buttons input[type="radio"]:checked + label,
+.gender-buttons input[type="radio"]:checked + label,
+.goal-buttons input[type="radio"]:checked + label,
+.activity-buttons input[type="radio"]:checked + label {
+  background-color: var(--primary-2);
+  font-weight: var(--fw-medium);
+}
+
+.goal-buttons input[type="radio"]:checked + label {
+  background-color: var(--primary-2);
+  font-weight: var(--fw-medium);
+}
+/* end radio buttons*/
+
+.age #age-range {
+  width: 100%;
+}
+
+.height #height-range {
+  width: 100%;
+}
+.weight #weight-range {
+  width: 100%;
+}
+/* submit button*/
+.form-button button[type="submit"] {
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+}
+
+/*end form*/
+
+/*results*/
+.results {
+  flex: 1;
+  padding: 20px 40px;
+  background-color: #f1ead9;
+  position: relative;
+  z-index: -2;
+}
+.results .results-body .outer_circle .bmr {
+  /* position: absolute;
+  left: 35%;
+  top: 18%; */
+  font-size: 14px;
+  color: #a7a7a7;
+}
+.results .results-body .outer_circle .kcal-calories {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.results .results-body .daily-stats p {
+  color: #a7a7a7;
+}
+.results .results-body .results-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.results .results-body .results-stats .results-stat {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #a7a7a7;
+  border-radius: 8px;
+}
+.results .results-stats .body-fat .bf-bold,
+.results .results-stats .bmi .bmi-bold,
+.results .results-stats .tdee .tdee-bold {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+/* circular bar*/
+.outer_circle {
+  position: relative;
+  margin: 50px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f1ead9;
+}
+
+.inner_circle {
+  background-image: linear-gradient(
+    to top,
+    var(--primary-3) 0%,
+    var(--primary-1) 100%
+  );
+  content: "";
+  position: absolute;
+  inset: -14%;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.formulas .formulas-heading h2 {
+  margin-top: 30px;
+}
+
+@media (max-width: 60em) {
+  #app,
+  .main {
+    flex-direction: column;
+  }
+}
