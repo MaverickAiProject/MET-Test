@@ -238,7 +238,9 @@ ul {
 
 /* About Section Start */
 .about-section {
-    margin-bottom: 50px;
+    margin: 60px auto;
+    width: 80vw !important;
+text-align: justify;
 }
 
 .about-section h1 {
