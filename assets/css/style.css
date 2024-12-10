@@ -184,7 +184,7 @@ ul {
 
 /* Tools Section Start */
 .tools-section {
-    margin: 80px 0;
+    margin: 40px 0 80px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
