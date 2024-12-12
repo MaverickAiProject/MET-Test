@@ -25,6 +25,10 @@ ul {
     list-style-type: none;
 }
 
+.spl-color{
+    color: #6f1e9e;
+}
+
 /* All Buttons */
 
 .all-btns {
@@ -98,6 +102,13 @@ ul {
     border-radius: 4px;
 }
 
+.login-btn{
+    background-color: #3b0d77;
+    color: white !important;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+
 /* Mobile View (under 768px) */
 @media (max-width: 768px) {
     .navbar-links {
@@ -142,7 +153,8 @@ ul {
 
 /* Hero Start */
 .hero-section {
-    height: 90vh;
+    height: 500px;
+    max-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,6 +167,10 @@ ul {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+}
+
+.hero-p{
+    max-width: 90%;
 }
 
 .hero-text {
@@ -170,11 +186,13 @@ ul {
 }
 
 .hero-text h1 {
-    font-size: max(4.5vw, 30px);
+    font-size: max(4vw, 30px);
+    /* max-width: 90%; */
 }
 
+
 .hero-image img {
-    width: 100%;
+    width: 1500px;
     height: auto;
     margin: 0 auto;
     border-radius: 10px;
@@ -212,7 +230,8 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 20px;
+    width: 17rem;
+    padding-top: 10px;
     position: relative;
     bottom: 0;
     transition: 0.3s;
@@ -226,7 +245,7 @@ ul {
 }
 
 .card-img-top {
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .tools-card-btn {
@@ -378,6 +397,9 @@ footer {
 
 /* Media Queries for Mobile */
 @media (max-width: 700px) {
+    .hero-section{
+        height: 500px;
+    }
     .hero-main {
         flex-direction: column;
     }

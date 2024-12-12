@@ -1,0 +1,54 @@
+body {
+    padding: 70px;
+}
+form {
+    width: 40%;
+}
+
+#about {
+    width: 70%;
+}
+#barcode-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    text-align: center;
+}
+/* .barcode {
+    width: 200px;
+    height: 60px;
+} */
+.priceImgWrapper {
+    display: flex;
+    flex-direction: column;
+    /* font-size: 20px; */
+}
+#error-message, #nan-error {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    padding: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    background: rgba(236, 114, 114, 0.288);
+}
+
+.barcode{
+    width: 150px;
+    height: 80px;
+    filter: none;
+    /* image-rendering: auto; */
+}
+
+span.barcodePrice
+{
+font-family: sans-serif;
+Font-size:18px;
+font-weight: bold;
+/* padding-bottom: 0px; */
+margin-bottom: -8px;
+z-index: 10;
+/* padding-top: 0% */
+}

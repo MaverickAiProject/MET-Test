@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- MD BOOTSTRAP -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <title>Bar Code Generator</title>
+</head>
+
+<body>
+
+
+    <div id="error-message"></div>
+    <div id="nan-error">Sticker Quantity can't exceed 100 no's</div>
+
+
+    <form name="inputForm" id="codeForm" onsubmit="return false">
+        <p class="h4 text mb-4">Product Level Generator</p>
+
+        <!-- Default input product code  -->
+        <label for="dataString" class="grey-text">Enter Your Product's Code Here
+            <span style="color: red">*</span>
+        </label>
+        <input type="text" id="dataString" name="Product Code" class="form-control" required>
+        <!-- <div class="error-message">This is an error message</div> -->
+        <br>
+
+        <!-- Default input product price  -->
+        <label for="productPrice" class="grey-text">Enter Product Price
+            <span style="color: red">*</span>
+        </label>
+        <input type="text" id="productPrice" name="Product Price" class="form-control" required>
+        <!-- <div class="error-message">This is an error message</div> -->
+        <br>
+
+        <!-- Default input no:of stickers -->
+        <label for="totallevels" class="grey-text">Number Of Stickers You Want To Print
+            <span style="color: red">*</span>
+        </label>
+        <input type="text" id="totallevels" name="Sticker Quantity" class="form-control" min="1" max="100" required>
+        <!-- <div class="error-message">This is an error message</div> -->
+
+
+        <div class="mt-4" id="editor">
+            <button class="btn btn-default" type="submit" id="submitData">Generate</button>
+            <button class="btn btn-default" id="createPDF">Create PDF</button>
+            <button class="btn btn-default" id="resetBarcodes">Reset</button>
+        </div>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <div id="barcode-wrapper"></div>
+    <!--<canvas id="hidden-barcode"></canvas>-->
+
+
+    <script src="./assets/js/html2pdf.js"></script>
+
+    <!-- BARCODE GENERATOR-->
+    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+
+    <!-- Custom JS-->
+    <script src="./assets/js/script.js"></script>
+
+
+
+
+</body>
+
+</html>
