@@ -15,6 +15,7 @@ body {
     --border-color: #c23fbf;
     --main-gradient:  linear-gradient(90deg, rgba(147, 58, 207, 1) 0%, rgba(162, 64, 205, 1) 45%, rgba(245, 62, 170, 1) 100%);
     --main-purple: #3b0d77;
+    --main-green: #c9f31d;
 }
 
 a {
@@ -54,11 +55,20 @@ ul {
 }
 
 /* Nabvar Start */
+
+.nav-outer{
+    background-color: black;
+    color: white;
+    
+}
+
 .navbar{
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    margin: 0 auto;
 }
 
 .navbar-logo img{
@@ -73,13 +83,16 @@ ul {
 }
 
 .navbar-links li a{
-    color: black;
+    color: white;
     transition: 0.3s;
+    position: relative;
+    bottom: 0;
 }
 
-.navbar-links li a:hover  {
-    font-weight: 700;
-    color: #993cce;
+.navbar-links li:hover a{
+    /* font-weight: 700; */
+    color: var(--main-green);
+    bottom: 4px;
 }
 
 .hamburger{
@@ -98,13 +111,13 @@ ul {
 .hamburger span {
     display: block;
     height: 4px;
-    background-color: black;
+    background-color: white;
     border-radius: 4px;
 }
 
 .login-btn{
-    background-color: #3b0d77;
-    color: white !important;
+    background-color: var(--main-green);
+    color: black !important;
     border-radius: 100px;
     padding: 10px 20px;
 }
@@ -152,51 +165,72 @@ ul {
 /* Nabvar End */
 
 /* Hero Start */
-.hero-section {
-    height: 500px;
-    max-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 70px;
-    padding-top: 30px;
-}
 
-.hero-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
+.hero2-section{
+    background-image: url("../images/hero2/hero2-back.jpg");
+    }
+    
+    .stt{
+        color: #c9f31d;
+    }
+    
+    .hero2-inner{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        max-width: 3000px;
+        width: 80vw;
+        margin: 0 auto;
+        padding: 40px 0 70px;
+        gap: 20px;
+    }
+    
+    .hero2-text h1{
+        color: white;
+        font-size: max(5vw, 30px);
+        margin-bottom: 20px;
+    }
+    
+    .hero2-text p{
+        color: rgb(180, 180, 180);
+        margin-bottom: 30px;
+    }
+    
+    .hero2-text button{
+        background-color: #c9f31d;
+        padding: 12px 20px ;
+        border-radius: 300px ;
+        border: none;
+        outline: none;
+        position: relative;
+        bottom: 0;
+        transition: 0.3s;
+        font-weight: 400;
+    }
+    
+    .hero2-text button:hover{
+        bottom: 5px;
+        font-weight: 700;
+    }
+    
+    .hero2-img{
+        width: max(30vw, 300px);
+        position: relative;
+        scale: 1;
+        transition: 0.4s;
+    }
+    
+    .hero2-img:hover{
+        scale: 1.1;
+    }
 
-.hero-p{
-    max-width: 90%;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 55%;
-}
-
-.hero-text p {
-    font-size: max(1.5vw, 12px);
-    color: rgb(165, 165, 165);
-}
-
-.hero-text h1 {
-    font-size: max(4vw, 30px);
-    /* max-width: 90%; */
-}
-
-
-.hero-image img {
-    width: 1500px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 10px;
-}
+    @media (max-width: 768px) {
+        .hero2-inner{
+            flex-direction: column;
+            text-align: center;
+            gap: 50px;
+        }
+    }
 
 /* Hero End */
 
@@ -397,28 +431,6 @@ footer {
 
 /* Media Queries for Mobile */
 @media (max-width: 700px) {
-    .hero-section{
-        height: 500px;
-    }
-    .hero-main {
-        flex-direction: column;
-    }
-
-    .hero-text {
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hero-image img {
-        width: 80%;
-    }
-
     .about-cont {
         flex-direction: column;
         gap: 0px;
@@ -452,8 +464,4 @@ footer {
     }
 }
 
-@media (max-width: 1000px) {
-    .hero-section {
-        height: fit-content;
-    }
-}
+

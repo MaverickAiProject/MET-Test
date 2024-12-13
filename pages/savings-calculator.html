@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Calculator</title>
+    <link rel="stylesheet" href="../assets/css/savings-calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Savings Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your Savings Growth</h2>
+            <form id="savings-form">
+                <div class="form-group">
+                    <label for="initial-deposit">Initial Deposit ($):</label>
+                    <input type="number" id="initial-deposit" placeholder="Enter initial deposit" required>
+                </div>
+                <div class="form-group">
+                    <label for="annual-contribution">Annual Contribution ($):</label>
+                    <input type="number" id="annual-contribution" placeholder="Enter annual contribution" required>
+                </div>
+                <div class="form-group">
+                    <label for="annual-increase">Annual Contribution Increase (%):</label>
+                    <input type="number" id="annual-increase" placeholder="Enter increase percentage" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-contribution">Monthly Contribution ($):</label>
+                    <input type="number" id="monthly-contribution" placeholder="Enter monthly contribution" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-increase">Monthly Contribution Increase (%):</label>
+                    <input type="number" id="monthly-increase" placeholder="Enter increase percentage" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Interest Rate (%):</label>
+                    <input type="number" id="interest-rate" placeholder="Enter interest rate" required>
+                </div>
+                <div class="form-group">
+                    <label for="years-to-save">Years to Save:</label>
+                    <input type="number" id="years-to-save" placeholder="Enter years" required>
+                </div>
+                <div class="form-group">
+                    <label for="tax-rate">Tax Rate (%):</label>
+                    <input type="number" id="tax-rate" placeholder="Enter tax rate">
+                </div>
+                <button type="button" id="calculate-btn">Calculate</button>
+            </form>
+            <div id="result" class="hidden">
+                <h3>Results</h3>
+                <p>Ending Balance: <span id="ending-balance"></span></p>
+                <p>Initial Deposit: <span id="initial-deposit-result"></span></p>
+                <p>Total Contributions: <span id="total-contributions"></span></p>
+                <p>Total Interest Earned: <span id="total-interest"></span></p>
+            </div>
+            <div id="table-container" class="hidden">
+                <h3>Yearly Breakdown</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Total Deposits</th>
+                            <th>Interest Earned</th>
+                            <th>Ending Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdown-table"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="../assets/js/savings-calculator.js"></script>
+</body>
+</html>

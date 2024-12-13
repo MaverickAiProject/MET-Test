@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" href="../assets/css/interest-calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Interest Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your Investment Growth</h2>
+            <form id="interest-form">
+                <div class="form-group">
+                    <label for="initial-investment">Initial Investment ($):</label>
+                    <input type="number" id="initial-investment" placeholder="Enter initial amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="annual-contribution">Annual Contribution ($):</label>
+                    <input type="number" id="annual-contribution" placeholder="Enter annual contribution" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-contribution">Monthly Contribution ($):</label>
+                    <input type="number" id="monthly-contribution" placeholder="Enter monthly contribution" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Interest Rate (%):</label>
+                    <input type="number" id="interest-rate" placeholder="Enter interest rate" required>
+                </div>
+                <div class="form-group">
+                    <label for="compounding-frequency">Compounding:</label>
+                    <select id="compounding-frequency">
+                        <option value="1">Annually</option>
+                        <option value="2">Half Yearly</option>
+                        <option value="4">Quarterly</option>
+                        <option value="12">Monthly</option>
+                        <option value="52">Weekly</option>
+                        <option value="365">Daily</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="investment-length-years">Investment Length:</label>
+                    <input type="number" id="investment-length-years" placeholder="Years" required>
+                    <input type="number" id="investment-length-months" placeholder="Months" required>
+                </div>
+                <div class="form-group">
+                    <label for="tax-rate">Tax Rate (%):</label>
+                    <input type="number" id="tax-rate" placeholder="Enter tax rate">
+                </div>
+                <div class="form-group">
+                    <label for="inflation-rate">Inflation Rate (%):</label>
+                    <input type="number" id="inflation-rate" placeholder="Enter inflation rate">
+                </div>
+                <button type="button" id="calculate-btn">Calculate</button>
+            </form>
+            <div id="result" class="hidden">
+                <h3>Results</h3>
+                <p>Ending Balance: <span id="ending-balance"></span></p>
+                <p>Total Principal: <span id="total-principal"></span></p>
+                <p>Total Contributions: <span id="total-contributions"></span></p>
+                <p>Total Interest: <span id="total-interest"></span></p>
+                <p>Interest from Initial Investment: <span id="initial-interest"></span></p>
+                <p>Interest from Contributions: <span id="contribution-interest"></span></p>
+                <p>Buying Power of End Balance (after Inflation): <span id="buying-power"></span></p>
+            </div>
+            <div id="table-container" class="hidden">
+                <h3>Yearly Breakdown</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Total Deposit</th>
+                            <th>Interest Earned</th>
+                            <th>Ending Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdown-table">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="../assets/js/interest-calculator.js"></script>
+</body>
+</html>

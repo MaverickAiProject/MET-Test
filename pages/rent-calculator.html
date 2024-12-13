@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Calculator</title>
+    <link rel="stylesheet" href="../assets/css/rent-calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Rent Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your Affordable Rent</h2>
+            <form id="rent-form">
+                <div class="form-group">
+                    <label for="income">Your pre-tax income:</label>
+                    <input type="number" id="income" placeholder="Enter your income" required>
+                    <select id="income-type">
+                        <option value="monthly">Per Month</option>
+                        <option value="yearly">Per Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="debt">Your monthly debt payments (loans, credit cards, etc.):</label>
+                    <input type="number" id="debt" placeholder="Enter monthly debt payments" required>
+                </div>
+                <button type="button" id="calculate-btn">Calculate</button>
+            </form>
+            <div id="result" class="hidden">
+                <p>You can afford up to <span id="affordable-rent"></span> per month on a rental payment.</p>
+                <p>It is recommended to keep your rental payment below <span id="recommended-rent"></span> per month.</p>
+            </div>
+        </section>
+        <section id="info">
+            <article>
+                <h2>What is Rent?</h2>
+                <p>Rent is the periodic payment made by a tenant to a landlord in exchange for the use of property, such as an apartment or house.</p>
+            </article>
+            <article>
+                <h2>The Renting Process</h2>
+                <p>Renting involves finding a suitable property, signing a lease agreement, and making regular payments to the landlord.</p>
+            </article>
+            <article>
+                <h2>Rent vs Buy</h2>
+                <p>Renting offers flexibility and lower upfront costs, while buying builds equity and provides long-term stability.</p>
+            </article>
+            <article>
+                <h2>Important Considerations When Renting</h2>
+                <p>Consider location, budget, lease terms, and additional costs such as utilities and maintenance.</p>
+            </article>
+            <article>
+                <h2>Ways to Reduce Rent Spending</h2>
+                <p>Negotiate rent, consider roommates, move to a less expensive area, or downsize to a smaller space.</p>
+            </article>
+        </section>
+    </main>
+    <script src="../assets/js/rent-calculator.js"></script>
+</body>
+</html>

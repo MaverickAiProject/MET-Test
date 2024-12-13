@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+    <link rel="stylesheet" href="../assets/css/salary-calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Salary</h2>
+            <form id="salary-form">
+                <div class="form-group">
+                    <label for="salary-amount">Salary Amount ($):</label>
+                    <input type="number" id="salary-amount" placeholder="Enter salary amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="pay-period">Salary Per:</label>
+                    <select id="pay-period">
+                        <option value="hour">Hour</option>
+                        <option value="day">Day</option>
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
+                        <option value="year">Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="work-hours-per-day">How many hours you work per day:</label>
+                    <input type="number" id="work-hours-per-day" placeholder="Hours per day" required>
+                </div>
+                <div class="form-group">
+                    <label for="work-days-per-week">How many days you work per week:</label>
+                    <input type="number" id="work-days-per-week" placeholder="Days per week" required>
+                </div>
+                <div class="form-group">
+                    <label for="vacation-days">Vacation Days per Year:</label>
+                    <input type="number" id="vacation-days" placeholder="Vacation days per year" required>
+                </div>
+                <button type="button" id="calculate-btn">Calculate</button>
+            </form>
+
+            <div id="result" class="hidden">
+                <h3>Salary Breakdown</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Salary Type</th>
+                            <th>Amount ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salary-breakdown"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="../assets/js/salary-calculator.js"></script>
+</body>
+</html>
