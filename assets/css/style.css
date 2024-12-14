@@ -168,7 +168,7 @@ ul {
 
 .hero2-section{
     background-image: url("../images/hero2/hero2-back.png");
-    background-size: contain;
+    /* background-size: contain; */
     }
     
     .stt{
