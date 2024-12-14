@@ -99,7 +99,7 @@ ul {
     font-weight: 400;
 }
 
-.hero2-text button a{
+.hero2-text button a {
     color: black;
 }
 
@@ -195,14 +195,17 @@ ul {
     margin-bottom: 15px;
 }
 
-.tools2-card-body{
+.tools2-card-body {
     min-height: 360px;
     /* width: 80%; */
 }
 
 .tools2-card-body h4 {
-    text-align: left;
     margin-bottom: 15px;
+}
+
+.tools2-card-body h4 a {
+    text-align: left;
     transition: 0.3s;
     color: var(--main-green);
 }
@@ -223,12 +226,12 @@ ul {
     font-weight: 600;
 }
 
-.tools2-card-btn{
+.tools2-card-btn {
     opacity: 0.8 !important;
     padding: 10px 40px !important;
 }
 
-.tools2-card-btn:hover{
+.tools2-card-btn:hover {
     opacity: 1 !important;
 }
 
@@ -273,7 +276,7 @@ ul {
 
 /* AI Section Start */
 
-.ai-section-outer{
+.ai-section-outer {
     background-color: black;
 }
 
