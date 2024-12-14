@@ -67,20 +67,29 @@
 /* Mobile View (under 768px) */
 @media (max-width: 768px) {
     .navbar-links {
-        display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;
-        left: 0;
-        background-color: white;
+        gap: 30px;
+        top: -100%;
+        right: -50%;
+        scale: 0;
+        background-color: black;
+        border-bottom: 1px solid var(--main-green);
         width: 100%;
-        padding: 20px 0;
+        padding: 20px 0 40px;
         text-align: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: 0.7s;
+        opacity: 0;
     }
 
     .navbar-links.active {
         display: flex;
+        transition: 0.7s;
+        top: 100%;
+        opacity: 100;
+        scale: 1;
+        right: 0;
     }
 
     .hamburger {
@@ -94,14 +103,17 @@
 
     .navbar-links li a {
         padding: 15px 20px;
-        color: black;
+        color: white;
         font-weight: 400;
         transition: 0.3s;
     }
 
     .navbar-links li a:hover {
         font-weight: 700;
-        color: #993cce;
+    }
+
+    .login-btn {
+        padding: 9px 50px !important;
     }
 }
 
