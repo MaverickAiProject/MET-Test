@@ -197,7 +197,6 @@ ul {
 
 .tools2-card-body {
     min-height: 360px;
-    /* width: 80%; */
 }
 
 .tools2-card-body h4 {
@@ -233,6 +232,12 @@ ul {
 
 .tools2-card-btn:hover {
     opacity: 1 !important;
+}
+
+@media (max-width: 700px) {
+    .tools2-card-body {
+        min-height: fit-content;
+    }
 }
 
 /* Tools 2 End */
