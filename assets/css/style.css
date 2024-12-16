@@ -19,6 +19,21 @@ body {
     --background-color: black;
 }
 
+/* Customize text selection */
+::selection {
+    background-color: var(--main-green);
+    /* Highlighted background */
+    color: black;
+    /* Highlighted text color */
+}
+
+/* For Firefox, use the following */
+::-moz-selection {
+    background-color: var(--main-green);
+    color: black;
+}
+
+
 a {
     text-decoration: none !important;
 }
