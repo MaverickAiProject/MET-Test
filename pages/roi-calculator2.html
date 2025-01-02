@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator</title>
+    <link rel="stylesheet" href="../assets/css/roi-calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Return on Investment (ROI) Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your ROI</h2>
+            <form id="roi-form">
+                <div class="form-group">
+                    <label for="amount-invested">Amount Invested ($):</label>
+                    <input type="number" id="amount-invested" placeholder="Enter amount invested" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount-returned">Amount Returned ($):</label>
+                    <input type="number" id="amount-returned" placeholder="Enter amount returned" required>
+                </div>
+                <div class="form-group">
+                    <label for="investment-time">Investment Time:</label>
+                    <select id="investment-time" required>
+                        <option value="manual">Manual (Enter Years)</option>
+                        <option value="dates">Dates (Select Start and End Dates)</option>
+                    </select>
+                </div>
+
+                <!-- Manual Time Input -->
+                <div class="form-group" id="manual-time">
+                    <label for="investment-years">Investment Duration (Years):</label>
+                    <input type="number" id="investment-years" placeholder="Enter years" min="0" step="0.01">
+                </div>
+
+                <!-- Dates Input -->
+                <div class="form-group" id="dates-time" style="display:none;">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date">
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date">
+                </div>
+
+                <button type="button" id="calculate-btn">Calculate</button>
+            </form>
+
+            <div id="result" class="hidden">
+                <h3>Results</h3>
+                <p id="investment-gain"></p>
+                <p id="roi"></p>
+                <p id="annualized-roi"></p>
+                <p id="investment-length"></p>
+            </div>
+        </section>
+    </main>
+    <script src="../assets/js/roi-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Main Outer Box */
+.main-outer {
+    background-color: black;
+    color: white;
+}
+
+/* Main Container */
+.main-container {
+    width: 1100px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    overflow: auto;
+}
+
+/* Main Tool Container of Left right both */
+.tool-cont {
+    display: flex;
+    margin: 10px 0 50px;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Main Tools Left Section */
+.tool-main-text {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Main Tools Right Section */
+.ads-img {
+    width: 300px;
+}
+
+.tool-details {
+    text-align: justify;
+    margin: 30px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--main-green);
+}
+
+.tool-details:hover .tool-details-heading {
+    color: var(--main-green);
+    font-weight: 600;
+}
+
+.tool-details-heading {
+    transition: 0.3s;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.tool-details-text {
+    transition: 0.3s;
+}
+
+.tool-details:hover .tool-details-text {
+    color: white;
+}
+
+.tool-details-text {
+    color: rgb(196, 194, 194);
+}
+
+.formula {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.tools-details-list li {
+    margin-bottom: 15px;
+}
+
+.tools-details-list li strong {
+    color: var(--main-green);
+}

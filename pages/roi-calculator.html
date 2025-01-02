@@ -1,61 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI Calculator</title>
-    <link rel="stylesheet" href="../assets/css/roi-calculator.css">
+    <title>ROI by Maverick Elite Tech</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/tool-template.css">
+    <link rel="stylesheet" href="../assets/css/tool-working-part.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
 </head>
+
 <body>
-    <header>
-        <h1>Return on Investment (ROI) Calculator</h1>
-    </header>
-    <main>
-        <section id="calculator">
-            <h2>Calculate Your ROI</h2>
-            <form id="roi-form">
-                <div class="form-group">
-                    <label for="amount-invested">Amount Invested ($):</label>
-                    <input type="number" id="amount-invested" placeholder="Enter amount invested" required>
-                </div>
-                <div class="form-group">
-                    <label for="amount-returned">Amount Returned ($):</label>
-                    <input type="number" id="amount-returned" placeholder="Enter amount returned" required>
-                </div>
-                <div class="form-group">
-                    <label for="investment-time">Investment Time:</label>
-                    <select id="investment-time" required>
-                        <option value="manual">Manual (Enter Years)</option>
-                        <option value="dates">Dates (Select Start and End Dates)</option>
-                    </select>
-                </div>
-
-                <!-- Manual Time Input -->
-                <div class="form-group" id="manual-time">
-                    <label for="investment-years">Investment Duration (Years):</label>
-                    <input type="number" id="investment-years" placeholder="Enter years" min="0" step="0.01">
-                </div>
-
-                <!-- Dates Input -->
-                <div class="form-group" id="dates-time" style="display:none;">
-                    <label for="start-date">Start Date:</label>
-                    <input type="date" id="start-date">
-                    <label for="end-date">End Date:</label>
-                    <input type="date" id="end-date">
-                </div>
-
-                <button type="button" id="calculate-btn">Calculate</button>
-            </form>
-
-            <div id="result" class="hidden">
-                <h3>Results</h3>
-                <p id="investment-gain"></p>
-                <p id="roi"></p>
-                <p id="annualized-roi"></p>
-                <p id="investment-length"></p>
+    <!-- Navbar Start -->
+    <div class="nav-outer">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="../index.html"> <img src="../assets/images/Maverick.png" class="img-fluid" alt=""></a>
             </div>
-        </section>
+            <ul class="navbar-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#tools-section">Ai Tools</a></li>
+                <li><a href="../index.html#about-section">About Us</a></li>
+                <li><a href="./login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Main Outer Section -->
+    <main class="main-outer">
+        <!-- Main Container of the content -->
+        <main class="main-container">
+            <!-- The Upper section of Tool page which has the tool -->
+            <section id="calculator" class="tool-cont">
+                <!-- Left section of the tool section -->
+                <div class="tool-main">
+                    <!-- Headings -->
+                    <h1 class="tool-main-heading"><span class="stt"> Return on Investment</span> (ROI) Calculator</h1>
+                    <p class="tool-main-text">The Salary Calculator converts salary amounts to their corresponding
+                        values based on payment frequency. Examples of payment frequencies include biweekly,
+                        semi-monthly, or monthly payments. Results include unadjusted figures and adjusted figures that
+                        account for vacation days and holidays per year.</p>
+
+                    <!-- This is the working part of the tool -->
+                    <div class="tool-working-part">
+                        <form id="roi-form">
+                            <div class="form-group">
+                                <label for="amount-invested">Amount Invested ($):</label>
+                                <input type="number" id="amount-invested" placeholder="Enter amount invested" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount-returned">Amount Returned ($):</label>
+                                <input type="number" id="amount-returned" placeholder="Enter amount returned" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="investment-time">Investment Time:</label>
+                                <select id="investment-time" required>
+                                    <option value="manual">Manual (Enter Years)</option>
+                                    <option value="dates">Dates (Select Start and End Dates)</option>
+                                </select>
+                            </div>
+
+                            <!-- Manual Time Input -->
+                            <div class="form-group" id="manual-time">
+                                <label for="investment-years">Investment Duration (Years):</label>
+                                <input type="number" id="investment-years" placeholder="Enter years" min="0"
+                                    step="0.01">
+                            </div>
+
+                            <!-- Dates Input -->
+                            <div class="form-group" id="dates-time" style="display:none;">
+                                <label for="start-date">Start Date:</label>
+                                <input type="date" id="start-date">
+                                <label for="end-date">End Date:</label>
+                                <input type="date" id="end-date">
+                            </div>
+
+                            <button type="button" id="calculate-btn">Calculate</button>
+                        </form>
+
+                        <div id="result" class="hidden">
+                            <h3>Results</h3>
+                            <p id="investment-gain"></p>
+                            <p id="roi"></p>
+                            <p id="annualized-roi"></p>
+                            <p id="investment-length"></p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Right Section of the tool which will contain Ads -->
+                <div class="tool-right">
+                    <img src="../assets/images/ai.png" alt="" class="ads-img">
+                </div>
+            </section>
+            <!-- Text Sections of The Tools Page -->
+            <div class="tool-details">
+                <h3 class="tool-details-heading">What is Salary?</h3>
+                <p class="tool-details-text">A salary is normally paid on a regular basis, and the amount normally does
+                    not fluctuate based on the quality or quantity of work performed. An employee's salary is commonly
+                    defined as an annual figure in an employment contract that is signed upon hiring. Salary can
+                    sometimes be accompanied by additional compensation such as goods or services.</p>
+            </div>
+
+            <div class="tool-details">
+                <h3 class="tool-details-heading">Wage</h3>
+                <p class="tool-details-text">There are several technical differences between the terms "wage" and
+                    "salary." For starters, while the word "salary" is best associated with employee compensation on an
+                    annual basis, the word "wage" is best associated with employee compensation based on the number of
+                    hours worked multiplied by an hourly rate of pay. Also, wage-earners tend to be non-exempt, which
+                    means they are subject to overtime wage regulations set by the government to protect workers. In the
+                    U.S., these regulations are part of the Fair Labor Standards Act (FLSA). Non-exempt employees often
+                    receive 1.5 times their pay for any hours they work after surpassing 40 hours a week, also known as
+                    overtime pay, and sometimes double (and less commonly triple) their pay if they work on holidays.
+                    Salaried employees generally do not receive such benefits; if they work over 40 hours a week or on
+                    holiday, they will not be directly financially compensated for doing so. Generally speaking,
+                    wage-earners tend to earn less than salaried employees. For instance, a barista that works in a cafe
+                    may earn a "wage," while a professional that works in an office setting may earn a "salary." As a
+                    result, salaried positions often have a higher perceived status in society.
+                    <br>
+                    Most salaries and wages are paid periodically, typically monthly, semi-monthly, bi-weekly, weekly,
+                    etc. Although it is called a Salary Calculator, wage-earners may still use the calculator to convert
+                    amounts.
+                </p>
+            </div>
+
+            <div class="tool-details">
+                <h3 class="tool-details-heading">Miscellaneous Employee Benefits
+                </h3>
+                <p class="tool-details-text">While salary and wages are important, not all financial benefits from
+                    employment come in the form of a paycheck. Salaried employees, and to a lesser extent, wage-earners,
+                    typically have other benefits, such as employer-contributed healthcare insurance, payroll taxes
+                    (half of the Social Security and Medicare tax in the U.S.) that go towards old age and disability,
+                    unemployment tax, employer-contributed retirement plans, paid holiday/vacation days, bonuses,
+                    company discounts, and more. Part-time employees are less likely to have these benefits.
+                    <br>
+                    Miscellaneous employee benefits can be worth a significant amount in terms of monetary value. As
+                    such, it is important to consider these benefits as well as the base wage or salary offered when
+                    choosing between jobs.
+                </p>
+            </div>
+
+            <div class="tool-details">
+                <h3 class="tool-details-heading">Self-employed Contractors</h3>
+                <p class="tool-details-text">Self-employed contractors (freelancers who sell their goods and services as
+                    sole proprietorships) typically provide their own rates, which can be hourly, daily, or weekly, etc.
+                    Also, contractors generally do not have benefits such as paid time off, cheaper health insurance, or
+                    any other monetary perks typically associated with full-time employment. As a result, their pay
+                    rates should generally be higher (sometimes significantly so) than the salaries of equivalent
+                    full-time positions. Nevertheless, rates in the real world are driven by many factors, and it is not
+                    rare to see contractors take lower compensation.</p>
+            </div>
+
+            <div class="tool-details">
+                <h3 class="tool-details-heading">How Unadjusted and Adjusted Salaries are calculated?</h3>
+                <p class="tool-details-text">Using a $30 hourly rate, an average of eight hours worked each day, and 260
+                    working days a year (52 weeks multiplied by 5 working days a week), the annual unadjusted salary can
+                    be calculated as:
+                <p class="formula">
+                    $30 × 8 × (260) = $62,400
+                </p>
+
+                As can be seen, the hourly rate is multiplied by the number of working days a year (unadjusted) and
+                subsequently multiplied by the number of hours in a working day. The adjusted annual salary can be
+                calculated as:
+
+                <p class="formula">
+                    $30 × 8 × (260 - 25) = $56,400
+                </p>
+
+                Using 10 holidays and 15 paid vacation days a year, subtract these non-working days from the total
+                number of working days a year.
+
+                All bi-weekly, semi-monthly, monthly, and quarterly figures are derived from these annual calculations.
+                It is important to make the distinction between bi-weekly, which happens every two weeks, and
+                semi-monthly, which occurs twice per month, usually on the fifteenth and final day of the month.</p>
+            </div>
+
+            <div class="tool-details">
+                <h3 class="tool-details-heading">How to Increase Salary</h3>
+                <p class="tool-details-text">There are very few people in the world who wouldn't welcome a higher
+                    salary, and there are a myriad of ways in which a person can try to do so. While it is definitely
+                    easier said than done, it is certainly possible.
+
+                <ul class="tools-details-list">
+                    <li><strong>Education — </strong>Statistics have shown that the higher the level of education a
+                        person attains, the
+                        higher
+                        their average lifetime earnings. However, becoming more educated for a higher salary does not
+                        imply
+                        that everyone should immediately go out and receive a higher degree. Proof of knowledge can come
+                        in
+                        many other different forms. For one, qualifications or certifications are a less time-consuming
+                        and
+                        financially significant undertaking that can still result in a salary increase. Simply
+                        increasing
+                        relevant knowledge or expertise that pertains to a niche profession or industry can increase
+                        salary.
+                        This may involve staying up-to-date on current events within the niche by attending relevant
+                        conferences or spending leisure time reading on the subject.
+                    </li>
+                    <li>
+                        <strong> Experience —</strong> The more experience a person has within any niche industry or
+                        profession, the more
+                        likely
+                        their salary will increase over the years, given that they stay within the industry. This may be
+                        due
+                        to several reasons; for one, it shows that a person has enough interest in the industry to stay
+                        within it long-term. Secondly, by lasting within the industry long enough, there is sufficient
+                        proof
+                        that they are probably somewhat skilled. Employers see these as good signs and are more willing
+                        to
+                        increase a worker's salary.
+                    </li>
+                    <li>
+                        <strong> Network — </strong>For many niche professions or industries, there are professional
+                        organizations or trade
+                        associations that help their members network. These organizations try to connect their members
+                        with
+                        other members who may share the same profession and goals, or work in the same industry, which
+                        can
+                        potentially lead to job opportunities that can improve the salary.
+                    </li>
+                    <li>
+                        <strong>Performance Reviews — </strong>Most employers give out annual performance reviews to
+                        their employees. Most
+                        performance reviews usually involve a conversation between manager and employee regarding the
+                        past
+                        year and how the employee performed, the direction of the employee's role moving forward,
+                        including
+                        any new responsibilities they may have, and constructive criticism on what they could do better,
+                        among other things. Annual reviews that are, for the most part, positive are generally followed
+                        by
+                        an annual pay raise. If no raise is given, even after a glowing review, it may be in the
+                        employee's
+                        best interest to ask for a salary increase or begin considering other employment options.
+                    </li>
+                    <li>
+                        <strong>Negotiate — </strong> If a performance review was mostly positive, but no mention of a
+                        pay raise is made, it
+                        may
+                        be worth considering approaching the employer to attempt to negotiate a pay raise. Highlight
+                        achievements, particularly those that may have been mentioned in a performance review, such as
+                        meeting or exceeding certain sales goals, taking on a number of new job responsibilities, or
+                        anything valuable that was contributed to the employer that might warrant a raise. When starting
+                        a
+                        new job, it is also important to negotiate a higher salary, if possible.
+                    </li>
+                    <li>
+                        <strong>Change jobs — </strong>People that are stuck in a career they dislike with no salary
+                        increase and who have
+                        exhausted all other options to try to increase their salary may want to consider changing jobs.
+                        It
+                        is fairly common for some people to have a 10% or more increase in salary from doing so.
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </main>
     </main>
-    <script src="../assets/js/roi-calculator.js"></script>
+
+
+    <!-- Footer Start -->
+    <footer id="footer-section">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="../assets/images/Maverick.png" alt="">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#tools-section">Tools</a></li>
+                    <li><a href="../index.html#about-section">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul>
+                    <li><a href="../pages/financial-calculators-page.html">Financial Calculators</a></li>
+                    <li><a href="../pages/fitness-calculators-page.html">Fitness Calculator</a></li>
+                    <li><a href="../pages/other-tools-page.html">Other Free Tools</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    <script src="../assets/js/salary-calculator.js"></script>
+    <script src="../assets/js/index.js"></script>
 </body>
+
 </html>

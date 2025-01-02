@@ -9,6 +9,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-color: black;
 }
 
 :root {
@@ -19,15 +20,11 @@ body {
     --background-color: black;
 }
 
-/* Customize text selection */
 ::selection {
     background-color: var(--main-green);
-    /* Highlighted background */
     color: black;
-    /* Highlighted text color */
 }
 
-/* For Firefox, use the following */
 ::-moz-selection {
     background-color: var(--main-green);
     color: black;

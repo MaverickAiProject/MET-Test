@@ -1,0 +1,98 @@
+/* Styling the tool-working-part */
+.tool-working-part {
+    display: flex;
+    /* Use Flexbox to align children side by side */
+    gap: 20px;
+    /* Add spacing between form and result table */
+    background-color: #1a1a1a;
+    /* Darker background for contrast */
+    border: 1px solid var(--main-green);
+    /* Highlight border */
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the form */
+.tool-working-part form {
+    flex: 1;
+    /* Form takes up equal space as the table */
+    margin-bottom: 0;
+    /* Remove extra margin at the bottom */
+}
+
+.tool-working-part .form-group {
+    margin-bottom: 15px;
+}
+
+.tool-working-part label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--main-green);
+}
+
+.tool-working-part input,
+.tool-working-part select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--main-green);
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 1rem;
+}
+
+.tool-working-part button {
+    background-color: var(--main-green);
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tool-working-part button:hover {
+    background-color: #b6d71a;
+}
+
+/* Styling the result section */
+.tool-working-part #result {
+    flex: 1;
+    /* Result takes up equal space as the form */
+    border-left: 2px solid var(--main-green);
+    /* Add a visual divider */
+    padding-left: 20px;
+}
+
+.tool-working-part table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    margin-top: 15px;
+}
+
+.tool-working-part th,
+.tool-working-part td {
+    border: 1px solid var(--main-green);
+    padding: 10px;
+    text-align: left;
+}
+
+.tool-working-part th {
+    background-color: var(--main-green);
+    color: black;
+    font-weight: bold;
+}
+
+.tool-working-part tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.tool-working-part tr:nth-child(odd) {
+    background-color: #1a1a1a;
+}
