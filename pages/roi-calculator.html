@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI by Maverick Elite Tech</title>
+    <title>ROI (Return on Investment) Calculator</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/tool-template.css">
-    <link rel="stylesheet" href="../assets/css/tool-working-part.css">
+    <link rel="stylesheet" href="../assets/css/roi-calculator.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +60,7 @@
                 <!-- Left section of the tool section -->
                 <div class="tool-main">
                     <!-- Headings -->
-                    <h1 class="tool-main-heading"><span class="stt"> Return on Investment</span> (ROI) Calculator</h1>
+                    <h1 class="tool-main-heading"><span class="stt"> ROI (Return on Investment)</span> Calculator</h1>
                     <p class="tool-main-text">The Salary Calculator converts salary amounts to their corresponding
                         values based on payment frequency. Examples of payment frequencies include biweekly,
                         semi-monthly, or monthly payments. Results include unadjusted figures and adjusted figures that
@@ -95,7 +96,7 @@
                             <div class="form-group" id="dates-time" style="display:none;">
                                 <label for="start-date">Start Date:</label>
                                 <input type="date" id="start-date">
-                                <label for="end-date">End Date:</label>
+                                <label for="end-date" id="endDate">End Date:</label>
                                 <input type="date" id="end-date">
                             </div>
 
@@ -103,14 +104,35 @@
                         </form>
 
                         <div id="result" class="hidden">
-                            <h3>Results</h3>
-                            <p id="investment-gain"></p>
-                            <p id="roi"></p>
-                            <p id="annualized-roi"></p>
-                            <p id="investment-length"></p>
+                            <h3>ROI Breakdown</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Result Type</th>
+                                        <th>Amount ($)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="roi-breakdown">
+                                    <tr>
+                                        <td>Investment Gain</td>
+                                        <td id="investment-gain">$2000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ROI</td>
+                                        <td id="roi">40.00%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Annualized ROI</td>
+                                        <td id="annualized-roi">20.00%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Investment Length</td>
+                                        <td id="investment-length">2.00 years</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-
 
                 </div>
                 <!-- Right Section of the tool which will contain Ads -->
@@ -181,24 +203,29 @@
                 <p class="tool-details-text">Using a $30 hourly rate, an average of eight hours worked each day, and 260
                     working days a year (52 weeks multiplied by 5 working days a week), the annual unadjusted salary can
                     be calculated as:
-                <p class="formula">
+                <p class="formula tool-details-text">
                     $30 × 8 × (260) = $62,400
                 </p>
+                <p class="tool-details-text">
+                    As can be seen, the hourly rate is multiplied by the number of working days a year (unadjusted) and
+                    subsequently multiplied by the number of hours in a working day. The adjusted annual salary can be
+                    calculated as:
+                </p>
 
-                As can be seen, the hourly rate is multiplied by the number of working days a year (unadjusted) and
-                subsequently multiplied by the number of hours in a working day. The adjusted annual salary can be
-                calculated as:
-
-                <p class="formula">
+                <p class="formula tool-details-text">
                     $30 × 8 × (260 - 25) = $56,400
                 </p>
 
-                Using 10 holidays and 15 paid vacation days a year, subtract these non-working days from the total
-                number of working days a year.
+                <p class="tool-details-text">
+                    Using 10 holidays and 15 paid vacation days a year, subtract these non-working days from the total
+                    number of working days a year.
 
-                All bi-weekly, semi-monthly, monthly, and quarterly figures are derived from these annual calculations.
-                It is important to make the distinction between bi-weekly, which happens every two weeks, and
-                semi-monthly, which occurs twice per month, usually on the fifteenth and final day of the month.</p>
+                    All bi-weekly, semi-monthly, monthly, and quarterly figures are derived from these annual
+                    calculations.
+                    It is important to make the distinction between bi-weekly, which happens every two weeks, and
+                    semi-monthly, which occurs twice per month, usually on the fifteenth and final day of the month.</p>
+                </p>
+
             </div>
 
             <div class="tool-details">
@@ -309,7 +336,7 @@
     <!-- Footer End -->
 
 
-    <script src="../assets/js/salary-calculator.js"></script>
+    <script src="../assets/js/roi-calculator.js"></script>
     <script src="../assets/js/index.js"></script>
 </body>
 

@@ -32,6 +32,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   } else if (investmentTimeOption === "dates") {
     const startDate = new Date(document.getElementById("start-date").value);
     const endDate = new Date(document.getElementById("end-date").value);
+    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+      alert("Please enter valid start and end dates.");
+      return;
+    }
     investmentDuration = (endDate - startDate) / (1000 * 60 * 60 * 24 * 365.25); // years
   }
 
@@ -54,14 +58,12 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   // Display Results
   document.getElementById(
     "investment-gain"
-  ).textContent = `Investment Gain: $${investmentGain.toFixed(2)}`;
-  document.getElementById("roi").textContent = `ROI: ${roi}%`;
-  document.getElementById(
-    "annualized-roi"
-  ).textContent = `Annualized ROI: ${annualizedROI}%`;
+  ).textContent = `$${investmentGain.toFixed(2)}`;
+  document.getElementById("roi").textContent = `${roi}%`;
+  document.getElementById("annualized-roi").textContent = ` ${annualizedROI}%`;
   document.getElementById(
     "investment-length"
-  ).textContent = `Investment Length: ${investmentDuration.toFixed(2)} years`;
+  ).textContent = `${investmentDuration.toFixed(2)} years`;
 
   document.getElementById("result").classList.remove("hidden");
 });
