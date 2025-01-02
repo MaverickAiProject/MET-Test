@@ -1,13 +1,9 @@
 /* Styling the tool-working-part */
 .tool-working-part {
     display: flex;
-    /* Use Flexbox to align children side by side */
     gap: 20px;
-    /* Add spacing between form and result table */
     background-color: #1a1a1a;
-    /* Darker background for contrast */
     border: 1px solid var(--main-green);
-    /* Highlight border */
     border-radius: 8px;
     padding: 20px;
     color: white;
@@ -63,9 +59,7 @@
 /* Styling the result section */
 .tool-working-part #result {
     flex: 1;
-    /* Result takes up equal space as the form */
     border-left: 2px solid var(--main-green);
-    /* Add a visual divider */
     padding-left: 20px;
 }
 
@@ -95,4 +89,24 @@
 
 .tool-working-part tr:nth-child(odd) {
     background-color: #1a1a1a;
+}
+
+
+@media (max-width: 768px) {
+    .tool-working-part {
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .tool-working-part #result {
+        flex: 1;
+        border-top: 2px solid var(--main-green);
+        border-left: none;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
 }
