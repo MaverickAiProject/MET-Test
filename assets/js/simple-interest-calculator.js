@@ -62,7 +62,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     )}%.`;
   } else if (option === "balance") {
     balance = principal * (1 + interestRate * term);
-    resultText = `The Balance is $${balance.toFixed(2)}.`;
+    resultText = `The Final Balance is $${balance.toFixed(2)}.`;
   }
 
   // Show the result

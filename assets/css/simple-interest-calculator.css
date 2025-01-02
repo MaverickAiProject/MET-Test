@@ -1,87 +1,123 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-header {
-    background-color: #4caf50;
-    color: white;
-    text-align: center;
-    padding: 1.5em 0;
-}
-
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-h1, h2 {
-    margin: 0 0 1rem;
-    font-family: 'Roboto', sans-serif;
-}
-
-h3 {
-    margin-top: 2rem;
-    color: #4caf50;
-}
-
-form {
+/* Styling for the Simple Interest Calculator working part */
+.tool-working-part {
     display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.2rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4caf50;
+    gap: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid var(--main-green);
+    border-radius: 8px;
+    padding: 20px;
     color: white;
-    padding: 0.8rem 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the form */
+.tool-working-part form {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.tool-working-part .form-group {
+    margin-bottom: 15px;
+}
+
+.tool-working-part label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--main-green);
+}
+
+.tool-working-part input,
+.tool-working-part select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--main-green);
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 1rem;
+}
+
+.tool-working-part button {
+    background-color: var(--main-green);
+    color: black;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+.tool-working-part button:hover {
+    background-color: #b6d71a;
 }
 
-.hidden {
-    display: none;
+/* Styling the result section */
+.tool-working-part #result {
+    flex: 1;
+    border-left: 2px solid var(--main-green);
+    padding-left: 20px;
 }
 
-#result {
+.tool-working-part table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    margin-top: 15px;
+}
+
+.tool-working-part th,
+.tool-working-part td {
+    border: 1px solid var(--main-green);
+    padding: 10px;
+    text-align: left;
+}
+
+.tool-working-part th {
+    background-color: var(--main-green);
+    color: black;
+    font-weight: bold;
+}
+
+.tool-working-part tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.tool-working-part tr:nth-child(odd) {
+    background-color: #1a1a1a;
+}
+
+#endDate {
+    margin-top: 12px;
+}
+
+.tool-details-formula {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    color: #333;
     background-color: #f9f9f9;
-    padding: 1rem;
-    border: 1px solid #ddd;
+    padding: 0.5em;
     border-radius: 5px;
-    margin-top: 2rem;
-    font-size: 1.1rem;
+    margin: 1em 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .tool-working-part {
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .tool-working-part #result {
+        flex: 1;
+        border-top: 2px solid var(--main-green);
+        border-left: none;
+        padding-left: 0px;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
 }
