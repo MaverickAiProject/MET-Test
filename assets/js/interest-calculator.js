@@ -1,4 +1,6 @@
-document.getElementById("calculate-btn").addEventListener("click", function () {
+// Function to calculate results
+function calculateResults() {
+  // Fetching input field values
   const initialInvestment =
     parseFloat(document.getElementById("initial-investment").value) || 0;
   const annualContribution =
@@ -10,86 +12,76 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const compoundingFrequency = parseInt(
     document.getElementById("compounding-frequency").value
   );
-  const taxRate = parseFloat(document.getElementById("tax-rate").value) || 0;
-  const inflationRate =
-    parseFloat(document.getElementById("inflation-rate").value) || 0;
   const years =
     parseInt(document.getElementById("investment-length-years").value) || 0;
   const months =
     parseInt(document.getElementById("investment-length-months").value) || 0;
+  const taxRate = parseFloat(document.getElementById("tax-rate").value) || 0;
+  const inflationRate =
+    parseFloat(document.getElementById("inflation-rate").value) || 0;
 
   const totalMonths = years * 12 + months;
-  const totalYears = totalMonths / 12;
-  const annualRate = interestRate / 100;
-  const periodicRate = annualRate / compoundingFrequency;
-
+  const monthlyRate = interestRate / 100 / 12;
+  const totalContributions =
+    annualContribution * years + monthlyContribution * totalMonths;
   let balance = initialInvestment;
-  let totalContributions = 0;
-  let interestFromInitial = 0;
-  let interestFromContributions = 0;
 
-  const tableBody = document.getElementById("breakdown-table");
-  tableBody.innerHTML = ""; // Clear previous results.
-
-  for (let i = 0; i < totalYears; i++) {
-    let yearInterest = 0;
-    let yearContributions = 0;
-
-    for (let j = 0; j < compoundingFrequency; j++) {
-      const periodicContribution =
-        annualContribution / compoundingFrequency +
-        (monthlyContribution * 12) / compoundingFrequency;
-      yearContributions += periodicContribution;
-      totalContributions += periodicContribution;
-
-      const interest = balance * periodicRate;
-      balance += interest + periodicContribution;
-      yearInterest += interest;
-
-      if (i === 0) {
-        interestFromInitial += interest;
-      } else {
-        interestFromContributions += interest;
-      }
-    }
-
-    tableBody.innerHTML += `
-            <tr>
-                <td>${i + 1}</td>
-                <td>$${yearContributions.toFixed(2)}</td>
-                <td>$${yearInterest.toFixed(2)}</td>
-                <td>$${balance.toFixed(2)}</td>
-            </tr>
-        `;
+  // Calculate balance over time
+  for (let i = 0; i < totalMonths; i++) {
+    balance += monthlyContribution;
+    balance *= 1 + monthlyRate;
   }
 
-  const totalPrincipal = initialInvestment + totalContributions;
-  const totalInterest = balance - totalPrincipal;
-  const inflationAdjustment = Math.pow(1 + inflationRate / 100, totalYears);
-  const buyingPower = balance / inflationAdjustment;
+  const totalInterest = balance - initialInvestment - totalContributions;
+  const buyingPower = balance / Math.pow(1 + inflationRate / 100, years);
 
+  // Update the UI with results
   document.getElementById("ending-balance").textContent = `$${balance.toFixed(
     2
   )}`;
   document.getElementById(
     "total-principal"
-  ).textContent = `$${totalPrincipal.toFixed(2)}`;
+  ).textContent = `$${initialInvestment.toFixed(2)}`;
   document.getElementById(
     "total-contributions"
   ).textContent = `$${totalContributions.toFixed(2)}`;
   document.getElementById(
     "total-interest"
   ).textContent = `$${totalInterest.toFixed(2)}`;
-  document.getElementById(
-    "initial-interest"
-  ).textContent = `$${interestFromInitial.toFixed(2)}`;
-  document.getElementById(
-    "contribution-interest"
-  ).textContent = `$${interestFromContributions.toFixed(2)}`;
   document.getElementById("buying-power").textContent = `$${buyingPower.toFixed(
     2
   )}`;
 
-  document.getElementById("result").classList.remove("hidden");
-  document.getElementById("table-container").classList.remove("hidden");
-});
+  // Update breakdown table
+  let breakdownHTML = "";
+  let yearlyBalance = initialInvestment;
+  for (let year = 1; year <= years; year++) {
+    // Apply the interest for the year
+    let yearDeposit = initialInvestment + annualContribution * year;
+    let yearInterest = 0;
+
+    for (let month = 1; month <= 12; month++) {
+      yearlyBalance += monthlyContribution; // Add monthly contribution
+      yearlyBalance *= 1 + monthlyRate; // Apply interest
+    }
+
+    yearInterest =
+      yearlyBalance - (initialInvestment + annualContribution * year);
+
+    breakdownHTML += `<tr>
+          <td>${year}</td>
+          <td>$${yearDeposit.toFixed(2)}</td>
+          <td>$${yearInterest.toFixed(2)}</td>
+          <td>$${yearlyBalance.toFixed(2)}</td>
+      </tr>`;
+  }
+  document.getElementById("breakdown-table").innerHTML = breakdownHTML;
+}
+
+// Set default calculation on page load
+window.onload = calculateResults;
+
+// Add event listener for the calculate button
+document
+  .getElementById("calculate-btn")
+  .addEventListener("click", calculateResults);

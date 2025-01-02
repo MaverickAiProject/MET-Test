@@ -1,88 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interest Calculator</title>
+    <title>Interest Calculator by Maverick Elite Tech</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/tool-template.css">
     <link rel="stylesheet" href="../assets/css/interest-calculator.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
 </head>
+
 <body>
-    <header>
-        <h1>Interest Calculator</h1>
-    </header>
-    <main>
-        <section id="calculator">
-            <h2>Calculate Your Investment Growth</h2>
-            <form id="interest-form">
-                <div class="form-group">
-                    <label for="initial-investment">Initial Investment ($):</label>
-                    <input type="number" id="initial-investment" placeholder="Enter initial amount" required>
-                </div>
-                <div class="form-group">
-                    <label for="annual-contribution">Annual Contribution ($):</label>
-                    <input type="number" id="annual-contribution" placeholder="Enter annual contribution" required>
-                </div>
-                <div class="form-group">
-                    <label for="monthly-contribution">Monthly Contribution ($):</label>
-                    <input type="number" id="monthly-contribution" placeholder="Enter monthly contribution" required>
-                </div>
-                <div class="form-group">
-                    <label for="interest-rate">Interest Rate (%):</label>
-                    <input type="number" id="interest-rate" placeholder="Enter interest rate" required>
-                </div>
-                <div class="form-group">
-                    <label for="compounding-frequency">Compounding:</label>
-                    <select id="compounding-frequency">
-                        <option value="1">Annually</option>
-                        <option value="2">Half Yearly</option>
-                        <option value="4">Quarterly</option>
-                        <option value="12">Monthly</option>
-                        <option value="52">Weekly</option>
-                        <option value="365">Daily</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="investment-length-years">Investment Length:</label>
-                    <input type="number" id="investment-length-years" placeholder="Years" required>
-                    <input type="number" id="investment-length-months" placeholder="Months" required>
-                </div>
-                <div class="form-group">
-                    <label for="tax-rate">Tax Rate (%):</label>
-                    <input type="number" id="tax-rate" placeholder="Enter tax rate">
-                </div>
-                <div class="form-group">
-                    <label for="inflation-rate">Inflation Rate (%):</label>
-                    <input type="number" id="inflation-rate" placeholder="Enter inflation rate">
-                </div>
-                <button type="button" id="calculate-btn">Calculate</button>
-            </form>
-            <div id="result" class="hidden">
-                <h3>Results</h3>
-                <p>Ending Balance: <span id="ending-balance"></span></p>
-                <p>Total Principal: <span id="total-principal"></span></p>
-                <p>Total Contributions: <span id="total-contributions"></span></p>
-                <p>Total Interest: <span id="total-interest"></span></p>
-                <p>Interest from Initial Investment: <span id="initial-interest"></span></p>
-                <p>Interest from Contributions: <span id="contribution-interest"></span></p>
-                <p>Buying Power of End Balance (after Inflation): <span id="buying-power"></span></p>
+    <!-- Navbar Start -->
+    <div class="nav-outer">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="../index.html"> <img src="../assets/images/Maverick.png" class="img-fluid" alt=""></a>
             </div>
-            <div id="table-container" class="hidden">
-                <h3>Yearly Breakdown</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Year</th>
-                            <th>Total Deposit</th>
-                            <th>Interest Earned</th>
-                            <th>Ending Balance</th>
-                        </tr>
-                    </thead>
-                    <tbody id="breakdown-table">
-                    </tbody>
-                </table>
+            <ul class="navbar-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#tools-section">Ai Tools</a></li>
+                <li><a href="../index.html#about-section">About Us</a></li>
+                <li><a href="https://ai.maverickelitetech.com/" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </section>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Main Outer Section -->
+    <main class="main-outer">
+        <!-- Main Container of the content -->
+        <main class="main-container">
+            <!-- The Upper section of Tool page which has the tool -->
+            <section id="calculator" class="tool-cont">
+                <!-- Left section of the tool section -->
+                <div class="tool-main">
+                    <!-- Headings -->
+                    <h1 class="tool-main-heading"><span class="stt"> Interest</span> Calculator</h1>
+                    <p class="tool-main-text">The Salary Calculator converts salary amounts to their corresponding
+                        values based on payment frequency. Examples of payment frequencies include biweekly,
+                        semi-monthly, or monthly payments. Results include unadjusted figures and adjusted figures that
+                        account for vacation days and holidays per year.</p>
+
+                    <!-- This is the working part of the tool -->
+                    <div class="tool-working-part">
+                        <div class="tool-working-part-upper">
+                            <form id="interest-form">
+                                <div class="form-group">
+                                    <label for="initial-investment">Initial Investment ($):</label>
+                                    <input type="number" id="initial-investment" value="1000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="annual-contribution">Annual Contribution ($):</label>
+                                    <input type="number" id="annual-contribution" value="1200" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="monthly-contribution">Monthly Contribution ($):</label>
+                                    <input type="number" id="monthly-contribution" value="100" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="interest-rate">Interest Rate (%):</label>
+                                    <input type="number" id="interest-rate" value="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="compounding-frequency">Compounding:</label>
+                                    <select id="compounding-frequency">
+                                        <option value="1">Annually</option>
+                                        <option value="2">Half Yearly</option>
+                                        <option value="4">Quarterly</option>
+                                        <option value="12" selected>Monthly</option>
+                                        <option value="52">Weekly</option>
+                                        <option value="365">Daily</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="investment-length-years">Investment Length (Years):</label>
+                                    <input type="number" id="investment-length-years" value="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="investment-length-months">Investment Length (Months):</label>
+                                    <input type="number" id="investment-length-months" value="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tax-rate">Tax Rate (%):</label>
+                                    <input type="number" id="tax-rate" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inflation-rate">Inflation Rate (%):</label>
+                                    <input type="number" id="inflation-rate" value="2">
+                                </div>
+                                <button type="button" id="calculate-btn">Calculate</button>
+                            </form>
+                            <div id="result">
+                                <h3>Results</h3>
+                                <p>Ending Balance: <span id="ending-balance">$0.00</span></p>
+                                <p>Total Principal: <span id="total-principal">$0.00</span></p>
+                                <p>Total Contributions: <span id="total-contributions">$0.00</span></p>
+                                <p>Total Interest: <span id="total-interest">$0.00</span></p>
+                                <p>Buying Power of End Balance <br> (after Inflation): <span
+                                        id="buying-power">$0.00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="table-container">
+                            <h3>Yearly Breakdown</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="smt">Year</th>
+                                        <th class="smt">Total Deposit</th>
+                                        <th class="smt">Interest Earned</th>
+                                        <th class="smt">Ending Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="breakdown-table">
+                                    <tr class="smts">
+                                        <td colspan="4" style="text-align:center;">No data available</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Right Section of the tool which will contain Ads -->
+                <div class="tool-right">
+                    <img src="../assets/images/ai.png" alt="" class="ads-img">
+                </div>
+            </section>
+            <!-- Text Sections of The Tools Page -->
+
+        </main>
     </main>
+
+
+    <!-- Footer Start -->
+    <footer id="footer-section">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="../assets/images/Maverick.png" alt="">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#tools-section">Tools</a></li>
+                    <li><a href="../index.html#about-section">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul>
+                    <li><a href="../pages/financial-calculators-page.html">Financial Calculators</a></li>
+                    <li><a href="../pages/fitness-calculators-page.html">Fitness Calculator</a></li>
+                    <li><a href="../pages/other-tools-page.html">Other Free Tools</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
     <script src="../assets/js/interest-calculator.js"></script>
+    <script src="../assets/js/index.js"></script>
 </body>
+
 </html>
