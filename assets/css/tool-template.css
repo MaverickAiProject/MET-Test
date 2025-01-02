@@ -78,6 +78,15 @@
     color: var(--main-green);
 }
 
+.tool-formula-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 @media (max-width:768px) {
     .tool-cont {
         flex-direction: column;

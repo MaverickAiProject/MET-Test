@@ -93,6 +93,17 @@
     margin-top: 12px;
 }
 
+.tool-details-formula {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+
+
 @media (max-width: 768px) {
     .tool-working-part {
         flex-direction: column;
