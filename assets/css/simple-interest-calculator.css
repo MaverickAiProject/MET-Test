@@ -120,4 +120,8 @@
         padding-top: 20px;
         margin-top: 20px;
     }
+
+    .tool-details-formula {
+        text-align: center;
+    }
 }
