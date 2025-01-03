@@ -360,7 +360,7 @@ ul {
 
 
 /* Tools Section Start */
-/* .tools-section {
+.blog-section {
     margin: 40px 0 80px 0;
     display: flex;
     flex-direction: column;
@@ -369,13 +369,22 @@ ul {
     gap: 30px;
 }
 
-.tools-section h1 {
+.blog-section .blog-heading h1 {
     font-size: max(4.5vw, 30px);
-    margin-bottom: 20px;
     text-align: center;
+    color: white;
 }
 
-.tools-cont {
+.blog-section .blog-heading p {
+    font-size: max(1.2vw, 14px);
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 60%;
+    color: rgb(186, 186, 186);
+}
+
+.blog-cont {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -383,32 +392,77 @@ ul {
     justify-content: center;
 }
 
-.card {
+.blog-section .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 17rem;
-    padding-top: 10px;
+    width: 30%;
+    min-width: 12rem;
+    max-width: 22rem;
+    padding: 20px;
     position: relative;
     bottom: 0;
+    background-color: black;
+    color: white;
     transition: 0.3s;
-    border: 1.5px solid black !important;
+    border: 1.5px solid rgb(98, 97, 97) !important;
+    text-align: justify;
 }
 
-.card:hover {
-    border-color: var(--border-color) !important;
+.blog-section .card:hover {
+    border-color: var(--main-green) !important;
     bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
 
-.card-img-top {
-    max-width: 150px;
+.blog-section .card-img-top {
+    /* max-width: 250px; */
+    width: 100%;
+    border-radius: 6px;
 }
 
-.tools-card-btn {
+.blog-section .tools-card-btn {
     padding: 5px 20px !important;
-} */
+    border-radius: 2px !important;
+}
+
+.card-title {
+    text-align: left;
+}
+
+.card-text {
+    font-size: max(1.1vw, 12px);
+    color: rgb(186, 186, 186);
+    margin-bottom: 5px;
+    height: 90px;
+}
+
+.blog-cont .card-body {
+    padding: 0;
+    padding-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .blog-section .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 420px) {
+    .blog-section .card {
+        width: 95%;
+    }
+
+    .blog-section .blog-heading p {
+        width: 90%;
+    }
+
+    .card-text {
+        height: fit-content;
+    }
+
+}
 
 /* Tools Section End */
