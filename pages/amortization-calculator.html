@@ -1,155 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amortization Calculator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      height: 100%;
-    }
-    .wrapper {
-      display: flex;
-      gap: 20px;
-      width: 90%;
-      max-width: 1200px;
-    }
-    .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      flex: 1;
-    }
-    .container h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-      font-weight: bold;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .result {
-      background: #e7f3ff;
-      padding: 15px;
-      border-radius: 5px;
-      flex: 2;
-      overflow-x: auto;
-    }
-    .result h3 {
-      text-align: center;
-    }
-    .result table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .result th, .result td {
-      padding: 8px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-  </style>
+  <title>Amortization Calculator by Maverick Elite Tech</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/tool-template.css">
+  <link rel="stylesheet" href="../assets/css/amortization-calculator.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <h1>Amortization Calculator</h1>
-      <label for="loanAmount">Loan Amount ($):</label>
-      <input type="number" id="loanAmount" placeholder="Enter loan amount">
-
-      <label for="interestRate">Annual Interest Rate (%):</label>
-      <input type="number" id="interestRate" placeholder="Enter interest rate">
-
-      <label for="loanTerm">Loan Term (Years):</label>
-      <input type="number" id="loanTerm" placeholder="Enter loan term">
-
-      <button onclick="calculateAmortization()">Calculate</button>
-    </div>
-
-    <div class="result" id="result" style="display: none;">
-      <h3>Amortization Schedule</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Month</th>
-            <th>Payment</th>
-            <th>Principal</th>
-            <th>Interest</th>
-            <th>Balance</th>
-          </tr>
-        </thead>
-        <tbody id="amortizationTable">
-        </tbody>
-      </table>
-    </div>
+  <!-- Navbar Start -->
+  <div class="nav-outer">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="../index.html"> <img src="../assets/images/Maverick.png" class="img-fluid" alt=""></a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#tools-section">Ai Tools</a></li>
+        <li><a href="../index.html#about-section">About Us</a></li>
+        <li><a href="https://ai.maverickelitetech.com/" class="login-btn">Login</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   </div>
+  <!-- Navbar End -->
 
-  <script>
-    function calculateAmortization() {
-      const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-      const annualInterestRate = parseFloat(document.getElementById('interestRate').value) / 100;
-      const loanTerm = parseInt(document.getElementById('loanTerm').value);
+  <!-- Main Outer Section -->
+  <main class="main-outer">
+    <!-- Main Container of the content -->
+    <main class="main-container">
+      <!-- The Upper section of Tool page which has the tool -->
+      <section id="calculator" class="tool-cont">
+        <!-- Left section of the tool section -->
+        <div class="tool-main">
+          <!-- Headings -->
+          <h1 class="tool-main-heading"><span class="stt"> Amortization</span> Calculator</h1>
+          <p class="tool-main-text">The Simple Interest Calculator allows you to calculate the interest earned
+            or paid on a principal amount over a specified time period at a fixed interest rate. By entering
+            the principal amount, rate of interest, and time duration (in years), the tool computes the
+            total simple interest. It also provides the final amount, including both the principal and the
+            interest. This calculator is ideal for quick calculations of loans, investments, or savings that
+            use simple interest, giving you a clear understanding of how interest accumulates over time.</p>
 
-      if (isNaN(loanAmount) || isNaN(annualInterestRate) || isNaN(loanTerm) || loanAmount <= 0 || annualInterestRate <= 0 || loanTerm <= 0) {
-        alert('Please enter valid inputs!');
-        return;
-      }
+          <!-- This is the working part of the tool -->
+          <div class="tool-working-part">
+            <div class="container">
+              <div class="input-section">
+                <label for="loanAmount">Loan Amount ($):</label>
+                <input type="number" id="loanAmount" placeholder="Enter loan amount">
 
-      const monthlyInterestRate = annualInterestRate / 12;
-      const totalPayments = loanTerm * 12;
-      const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -totalPayments));
+                <label for="interestRate">Annual Interest Rate (%):</label>
+                <input type="number" id="interestRate" placeholder="Enter interest rate">
 
-      let balance = loanAmount;
-      let amortizationTable = '';
+                <label for="loanTerm">Loan Term (Years):</label>
+                <input type="number" id="loanTerm" placeholder="Enter loan term">
 
-      for (let month = 1; month <= totalPayments; month++) {
-        const interest = balance * monthlyInterestRate;
-        const principal = monthlyPayment - interest;
-        balance -= principal;
+                <button id="calculateBtn">Calculate</button>
+              </div>
 
-        amortizationTable += `<tr>
-          <td>${month}</td>
-          <td>${monthlyPayment.toFixed(2)}</td>
-          <td>${principal.toFixed(2)}</td>
-          <td>${interest.toFixed(2)}</td>
-          <td>${balance > 0 ? balance.toFixed(2) : '0.00'}</td>
-        </tr>`;
+              <div class="summary-result">
+                <h3>Summary</h3>
+                <p>Total of <span id="totalPayments">0</span> monthly payments: <strong>$<span
+                      id="totalAmount">0.00</span></strong></p>
+                <p>Total interest: <strong>$<span id="totalInterest">0.00</span></strong></p>
+              </div>
+            </div>
 
-        if (balance <= 0) break;
-      }
+            <div class="result">
+              <h3>Amortization Schedule</h3>
+              <table id="amortizationTable-main">
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Payment</th>
+                    <th>Principal</th>
+                    <th>Interest</th>
+                    <th>Balance</th>
+                  </tr>
+                </thead>
+                <tbody id="amortizationTable"></tbody>
+              </table>
+            </div>
+          </div>
 
-      document.getElementById('amortizationTable').innerHTML = amortizationTable;
-      document.getElementById('result').style.display = 'block';
-    }
-  </script>
+        </div>
+        <!-- Right Section of the tool which will contain Ads -->
+        <div class="tool-right">
+          <img src="../assets/images/ai.png" alt="" class="ads-img">
+        </div>
+      </section>
+      <!-- Text Sections of The Tools Page -->
+      <div class="tool-details">
+        <h3 class="tool-details-heading">What is Simple Interest?</h3>
+        <p class="tool-details-text">
+          Simple interest is a method of calculating the interest charged or earned on a principal amount over
+          time. It is commonly used for loans, savings accounts, and investments.
+        </p>
+      </div>
+
+      <div class="tool-details">
+        <h3 class="tool-details-heading">Factors Affecting Simple Interest</h3>
+        <p class="tool-details-text">
+          The following factors influence the amount of simple interest:
+        </p>
+        <ul class="tools-details-list">
+          <li><strong>Principal —</strong> The amount of money that is either invested or loaned out
+            initially.</li>
+          <li><strong>Interest Rate —</strong> The percentage charged or earned on the principal amount.
+            Higher interest rates result in more interest.</li>
+          <li><strong>Term —</strong> The time period for which the money is invested or borrowed. The longer
+            the term, the more interest is earned or charged.</li>
+        </ul>
+      </div>
+
+      <div class="tool-details">
+        <h3 class="tool-details-heading">How to Calculate Simple Interest?</h3>
+        <p class="tool-details-text">
+          The formula to calculate Simple Interest is:
+        </p>
+        <pre class="tool-details-formula">SI = P × R × T / 100</pre>
+        <p class="tool-details-text">
+          Where:
+        <ul>
+          <li><strong>P —</strong> Principal Amount (initial investment or loan amount)</li>
+          <li><strong>R —</strong> Interest Rate (annual rate, expressed as a percentage)</li>
+          <li><strong>T —</strong> Time (in years)</li>
+        </ul>
+        </p>
+      </div>
+
+      <div class="tool-details">
+        <h3 class="tool-details-heading">How to Use the Simple Interest Calculator?</h3>
+        <p class="tool-details-text">
+          Simply select what you want to calculate (Principal, Term, Interest Rate, or Balance), then enter
+          the known values in the provided fields. Click on "Calculate" to find the result. The calculator
+          will compute the missing value based on the simple interest formula.
+        </p>
+      </div>
+
+      <div class="tool-details">
+        <h3 class="tool-details-heading">Why Use a Simple Interest Calculator?</h3>
+        <p class="tool-details-text">
+          A Simple Interest Calculator is a quick way to estimate interest on loans, investments, and savings.
+          It helps you make informed financial decisions by calculating interest accurately and efficiently.
+        </p>
+      </div>
+      </div>
+    </main>
+  </main>
+
+
+  <!-- Footer Start -->
+  <footer id="footer-section">
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="../assets/images/Maverick.png" alt="">
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#tools-section">Tools</a></li>
+          <li><a href="../index.html#about-section">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul>
+          <li><a href="../pages/financial-calculators-page.html">Financial Calculators</a></li>
+          <li><a href="../pages/fitness-calculators-page.html">Fitness Calculator</a></li>
+          <li><a href="../pages/other-tools-page.html">Other Free Tools</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+
+  <script src="../assets/js/amortization-calculator.js"></script>
+  <script src="../assets/js/index.js"></script>
 </body>
+
 </html>
