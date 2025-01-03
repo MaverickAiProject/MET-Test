@@ -433,7 +433,7 @@ ul {
 }
 
 .card-text {
-    font-size: max(1.1vw, 12px);
+    font-size: max(1.1vw, 14px);
     color: rgb(186, 186, 186);
     margin-bottom: 5px;
     min-height: 90px;
