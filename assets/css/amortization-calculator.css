@@ -119,7 +119,12 @@
     }
 
     #amortizationTable-main {
-        font-size: 10px;
+        font-size: 13px;
+    }
+
+    .tool-working-part .result th,
+    .tool-working-part .result td {
+        padding: 5px;
         text-align: center;
     }
 }
