@@ -450,7 +450,7 @@ ul {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .blog-section .card {
         width: 95%;
     }
