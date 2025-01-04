@@ -28,6 +28,9 @@ ol {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: calc(100vh - 6rem);
+    overflow-y: scroll;
+    padding-right: 20px;
 }
 
 .blog-left-img {
@@ -42,7 +45,7 @@ ol {
 }
 
 .blog-heading {
-    font-size: 2.5rem;
+    font-size: 40px;
     margin-bottom: 5px;
 }
 
@@ -83,6 +86,7 @@ ol {
 
 .blog-right {
     width: 100%;
+    max-height: fit-content;
     border: 1px solid rgb(212, 212, 212);
     padding: 15px;
     border-radius: 5px;
@@ -150,6 +154,12 @@ ol {
 }
 
 @media (max-width: 1000px) {
+    .blog-left {
+        height: fit-content;
+        padding-right: 0px;
+        overflow: hidden;
+    }
+
     .blog-right-card {
         max-width: 30%;
     }
@@ -171,6 +181,10 @@ ol {
         width: 45%;
     }
 
+    .blog-heading {
+        font-size: 30px;
+    }
+
     .blog-right-card {
         max-width: 45%;
     }
@@ -181,11 +195,15 @@ ol {
         max-width: 95%;
     }
 
+    .blog-heading {
+        font-size: 25px;
+    }
+
     .blog-right-card .card {
         width: 95%;
     }
 
-    .blog-right-card.blog-heading p {
+    .blog-right-card .blog-heading p {
         width: 90%;
     }
 
