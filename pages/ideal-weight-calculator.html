@@ -4,146 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideal Weight Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+    <title>Ideal Weight Calculator by Maverick Elite Tech</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/tool-template.css">
+    <link rel="stylesheet" href="../assets/css/ideal-weight-calculator.css">
 
-        .calculator-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .calculator {
-            width: 400px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-        .calculator h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #4caf50;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .input-group input[type="number"],
-        .input-group select {
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            height: 40px;
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #3e8e41;
-        }
-
-        .result {
-            margin-top: 20px;
-        }
-
-        .result h2 {
-            margin-bottom: 10px;
-        }
-
-        #ideal-weight {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4caf50;
-        }
-    </style>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
 </head>
 
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <h1>Ideal Weight Calculator</h1>
-            <form>
-                <div class="input-group">
-                    <label for="height">Height (in cm):</label>
-                    <input type="number" id="height" required>
+    <!-- Navbar Start -->
+    <div class="nav-outer">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="/"> <img src="../assets/images/Maverick.png" class="img-fluid" alt=""></a>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#tools-section">Ai Tools</a></li>
+                <li><a href="/#about-section">About Us</a></li>
+                <li><a href="https://ai.maverickelitetech.com/" class="login-btn" target="_blank">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Main Outer Section -->
+    <main class="main-outer">
+        <!-- Main Container of the content -->
+        <main class="main-container">
+            <!-- The Upper section of Tool page which has the tool -->
+            <section id="calculator" class="tool-cont">
+                <!-- Left section of the tool section -->
+                <div class="tool-main">
+                    <!-- Headings -->
+                    <h1 class="tool-main-heading"><span class="stt"> Ideal Weight </span> Calculator</h1>
+                    <p class="tool-main-text">Calculte your ideal weight.</p>
+
+                    <!-- This is the working part of the tool -->
+                    <div class="tool-working-part">
+                        <form>
+                            <div class="form-group">
+                                <label for="height">Height (in cm):</label>
+                                <input type="number" id="height" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <select id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <button id="calculate">Calculate</button>
+                        </form>
+                        <div class="summary-result">
+                            <h3>Your Ideal Weight Range:</h3>
+                            <p id="ideal-weight">Your ideal weight range is: 0 kg</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="input-group">
-                    <label for="gender">Gender:</label>
-                    <select id="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                <!-- Right Section of the tool which will contain Ads -->
+                <div class="tool-right">
+                    <img src="../assets/images/ai.png" alt="" class="ads-img">
                 </div>
-                <button id="calculate">Calculate</button>
-            </form>
-            <div class="result">
-                <h2>Your Ideal Weight Range:</h2>
-                <p id="ideal-weight"></p>
+            </section>
+            <!-- Text Sections of The Tools Page -->
+
+        </main>
+    </main>
+
+
+    <!-- Footer Start -->
+    <footer id="footer-section">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="../assets/images/Maverick.png" alt="">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#tools-section">Tools</a></li>
+                    <li><a href="/#about-section">About Us</a></li>
+                    <li><a href="/#blog-section">Blogs</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/pages/financial-calculators-page.html">Financial Calculators</a></li>
+                    <li><a href="/pages/fitness-calculators-page.html">Fitness Calculator</a></li>
+                    <li><a href="/pages/other-tools-page.html">Other Free Tools</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <script>
-        const heightInput = document.getElementById("height");
-        const genderSelect = document.getElementById("gender");
-        const calculateButton = document.getElementById("calculate");
-        const idealWeightElement = document.getElementById("ideal-weight");
+    </footer>
+    <!-- Footer End -->
 
-        calculateButton.addEventListener("click", (e) => {
-            e.preventDefault();
 
-            const height = parseFloat(heightInput.value);
-            const gender = genderSelect.value;
-
-            if (height <= 0) {
-                alert("Please enter a valid height");
-                return;
-            }
-
-            const idealWeight = calculateIdealWeight(height, gender);
-            idealWeightElement.textContent = `Your ideal weight range is: ${idealWeight} kg`;
-        });
-
-        function calculateIdealWeight(height, gender) {
-            const heightInMeters = height / 100;
-            let idealWeight;
-
-            if (gender === "male") {
-                idealWeight = 50 + 0.91 * (heightInMeters - 1.5);
-            } else {
-                idealWeight = 45.5 + 0.91 * (heightInMeters - 1.5);
-            }
-
-            return idealWeight.toFixed(2);
-        }
-    </script>
+    <script src="../assets/js/ideal-weight-calculator.js"></script>
+    <script src="../assets/js/index.js"></script>
 </body>
 
 </html>
