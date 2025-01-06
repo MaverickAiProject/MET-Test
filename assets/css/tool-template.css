@@ -2,6 +2,7 @@
 .main-outer {
     background-color: black;
     color: white;
+    min-height: calc(100vh - 260px);
 }
 
 /* Main Container */
@@ -22,6 +23,10 @@
     gap: 30px;
     align-items: center;
     justify-content: space-between;
+}
+
+.tool-main {
+    flex: 1;
 }
 
 /* Main Tools Left Section */
