@@ -1,3 +1,13 @@
+.passgen-outer {
+    background-color: black;
+    color: white;
+}
+
+.passgen-inner {
+    max-width: 1200px;
+    margin: auto;
+}
+
 #passGen-section {
     display: flex;
     justify-content: center;
@@ -12,7 +22,10 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 2rem;
+    border-radius: 5px;
+    border: 1px solid rgb(63, 63, 63);
+    margin-top: 20px;
 }
 
 .img-container {
@@ -24,7 +37,8 @@
     background-image: url('../images/passgen-hero.png');
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 1px;
+    border: 1px solid rgb(68, 68, 68);
 }
 
 #passGen-container {
@@ -47,13 +61,12 @@
 .pass-heading {
     margin-top: 20px;
     text-align: center;
-    font-weight: 700;
-
 }
 
 #passLengthRange {
     width: 100%;
-    accent-color: var(--main-purple);
+    accent-color: var(--main-green);
+    outline: none;
 }
 
 .passGenItems {
@@ -64,8 +77,8 @@
 }
 
 #copyPass {
-    background-color: var(--main-purple);
-    color: white;
+    background-color: var(--main-green);
+    color: black;
     align-self: center;
     padding: 10px;
     cursor: pointer;
@@ -88,21 +101,18 @@
     width: 100%;
     font-size: 25px;
     padding: 5px;
-    border-radius: 8px;
-    background-color: var(--main-purple);
-    color: white;
+    border-radius: 1px;
+    background-color: black;
+    color: var(--main-green);
+    border: 1px solid var(--main-green);
     cursor: pointer;
     transition: 0.5s;
     outline: none;
-    border: none;
 }
 
-.passGenItems #submitPass:hover {
-    background-color: var(--main-purple);
-}
 
 .passGenItems .checkDesign {
-    accent-color: var(--main-purple);
+    accent-color: var(--main-green);
     height: 17px;
     width: 20px;
     color: white;
@@ -133,7 +143,7 @@
     }
 }
 
-.section-width{
+.section-width {
     width: 80%;
     margin: 50px auto;
 }
@@ -142,11 +152,11 @@
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
-    color: #1F305E;
+    color: var(--main-green);
 }
 
 @media (max-width:420px) {
-    .section-width{
+    .section-width {
         width: 95%;
         margin: 30px auto;
     }
@@ -154,15 +164,22 @@
 
 /* How It Works Section */
 #howItWorks-section {
-    background-color: #f4f4f9;
+    background-color: black;
+    color: rgb(193, 192, 192);
     border-radius: 10px;
+    border: 1px solid rgb(128, 128, 128);
     padding: 30px;
+    transition: 0.3s;
+}
+
+#howItWorks-section:hover {
+    border-color: var(--main-green);
 }
 
 #howItWorks-section ol {
     margin-top: 10px;
     font-size: 1rem;
-    color: #333;
+    color: rgb(128, 128, 128);
 }
 
 #howItWorks-section li {
@@ -171,9 +188,15 @@
 
 /* Why Strong Passwords Matter Section */
 #whyStrongPasswords-section {
-    background-color: #ffffff;
+    background-color: black;
+    border: 1px solid rgb(128, 128, 128);
     padding: 30px;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+#whyStrongPasswords-section:hover {
+    border-color: var(--main-green);
 }
 
 .whyStrongPasswords-data {
@@ -185,12 +208,12 @@
 }
 
 .whyStrongPasswords-data img {
-    width: max(25vw, 200px);
+    width: max(20vw, 200px);
 }
 
 #whyStrongPasswords-section p {
     font-size: 1rem;
-    color: #555;
+    color: rgb(213, 213, 213);
     text-align: justify;
 }
 
@@ -202,9 +225,11 @@
 
 /* Additional Features Section */
 #features-section {
-    background-color: #f9f9f9;
+    background-color: black;
     padding: 30px;
     border-radius: 10px;
+    border: 1px solid rgb(116, 116, 116);
+    transition: 0.3s;
 }
 
 #features-section ul {
@@ -213,17 +238,27 @@
     padding-left: 20px;
 }
 
+#features-section:hover {
+    border-color: var(--main-green);
+}
+
 #features-section li {
     font-size: 1rem;
-    color: #333;
+    color: rgb(204, 204, 204);
 }
 
 
 /* FAQs Section */
 #faq-section {
-    background-color: #f4f4f9;
+    background-color: black;
     padding: 30px;
     border-radius: 10px;
+    border: 1px solid rgb(116, 116, 116);
+    transition: 0.3s;
+}
+
+#faq-section:hover {
+    border-color: var(--main-green);
 }
 
 .faq {
@@ -232,24 +267,24 @@
 
 .faq h3 {
     font-size: 1.2rem;
-    color: #1F305E;
+    color: white;
 }
 
 .faq p {
     font-size: 1rem;
-    color: #555;
+    color: rgb(155, 155, 155);
 }
 
 /* Security Section */
 #security-section {
-    background-color: #ffffff;
+    background-color: black;
     padding: 30px;
     border-radius: 10px;
 }
 
 #security-section p {
     font-size: 1rem;
-    color: #555;
+    color: #a1a1a1;
 }
 
 /* Call to Action Section */

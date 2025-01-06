@@ -32,9 +32,6 @@ function passwordGenerator(passwordLength) {
     allChars += allNumbers;
   }
 
-  // allChars = allChars + capitalLettersCheck.checked ? allCapitalLetters : "";
-  // allChars += smallLetterCheck.checked ? allSmallLetter : "";
-  // allChars += numbersCheck.checked ? allNumbers : "";
   allChars += symbolsCheck.checked ? allSymbols : "";
 
   let finalPassword = "";
