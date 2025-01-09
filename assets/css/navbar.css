@@ -3,6 +3,7 @@
 .nav-outer {
     background-color: var(--background-color);
     color: white;
+    z-index: 1000;
 }
 
 .navbar {
@@ -47,6 +48,11 @@
 
 /* Mobile View (under 768px) */
 @media (max-width: 768px) {
+    .nav-outer {
+        background-color: black !important;
+        z-index: 1000;
+    }
+
     .navbar-links {
         flex-direction: column;
         position: absolute;
@@ -67,10 +73,12 @@
     .navbar-links.active {
         display: flex;
         transition: 0.7s;
+        z-index: 1000;
         top: 100%;
         opacity: 100;
         scale: 1;
         right: 0;
+        background-color: black;
     }
 
     .hamburger {
@@ -97,8 +105,6 @@
         padding: 9px 50px !important;
     }
 }
-
-/* Nabvar End */
 
 
 .hamburger {
