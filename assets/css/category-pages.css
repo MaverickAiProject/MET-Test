@@ -31,7 +31,7 @@
     width: 80%;
 }
 
-.category-tools-card p {
+.category-tools-card h2 {
     border: 1px solid white;
     text-align: center;
     border-radius: 4px;
@@ -39,9 +39,10 @@
     transition: 0.4s;
     position: relative;
     bottom: 0;
+    font-size: max(1.3vw, 15px);
 }
 
-.category-tools-card p:hover {
+.category-tools-card h2:hover {
     border-color: var(--main-green);
     bottom: 7px;
 }
@@ -51,7 +52,7 @@
     transition: 0.4s;
 }
 
-.category-tools-card p:hover a {
+.category-tools-card a:hover h2 {
     color: var(--main-green);
 }
 

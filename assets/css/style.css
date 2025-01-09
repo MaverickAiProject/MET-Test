@@ -157,7 +157,7 @@ ul {
     text-align: center;
 }
 
-.tools2-heading h1 {
+.tools2-heading h2 {
     font-size: max(5vw, 30px);
 }
 
@@ -209,11 +209,11 @@ ul {
 }
 
 .tools2-card-body {
-    min-height: 360px;
+    min-height: 340px;
 }
 
 .tools2-card-body h4 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .tools2-card-body h4 a {
@@ -222,18 +222,19 @@ ul {
     color: var(--main-green);
 }
 
-.tools2-card-body p {
+.tools2-card-body h2 {
     line-height: 16px;
     text-align: left;
+    font-weight: 400;
 }
 
-.tools2-card-body p a {
+.tools2-card-body h2 a {
     color: white;
     font-size: 1.2rem;
     transition: 0.3s;
 }
 
-.tools2-card-body p a:hover {
+.tools2-card-body h2 a:hover {
     color: var(--main-green);
     font-weight: 600;
 }
@@ -241,6 +242,7 @@ ul {
 .tools2-card-btn {
     opacity: 0.8 !important;
     padding: 10px 40px !important;
+    margin-top: 20px;
 }
 
 .tools2-card-btn:hover {
@@ -269,7 +271,7 @@ ul {
     color: white;
 }
 
-.about-section h1 {
+.about-section h2 {
     text-align: center;
     font-size: max(4vw, 30px);
     color: var(--main-green);
@@ -309,7 +311,7 @@ ul {
     color: white;
 }
 
-.ai-section h1 {
+.ai-section h2 {
     font-size: max(3.5vw, 30px);
 }
 
@@ -369,7 +371,7 @@ ul {
     gap: 30px;
 }
 
-.blog-section .blog-heading h1 {
+.blog-section .blog-heading h2 {
     font-size: max(4.5vw, 45px);
     text-align: center;
     color: white;
@@ -429,6 +431,7 @@ ul {
 
 .card-title {
     text-align: left;
+    font-size: max(1.2vw, 18px);
 }
 
 .card-text {
