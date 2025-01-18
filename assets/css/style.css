@@ -68,6 +68,129 @@ ul {
     color: black;
 }
 
+.line-btns {
+    outline: none;
+    border: 1px solid var(--main-green);
+    color: var(--main-green);
+    padding: 10px 20px;
+    margin-top: 8px;
+    max-width: fit-content;
+    border-radius: 300px;
+    transition: 0.3s;
+    transform: scale(1);
+    position: relative;
+    background-color: black;
+}
+
+.line-btns:hover {
+    transform: scale(1.08);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+
+/*  Video Hero Start  */
+/* Outer Section */
+.video-outer-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+/* Video Container */
+.video-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Styling */
+.video-div video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay Div */
+.vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1),
+            /* Darker top edge */
+            rgba(0, 0, 0, 0.3) 20%,
+            /* Transparent middle */
+            rgba(0, 0, 0, 0.3) 70%,
+            /* Transparent middle */
+            rgba(0, 0, 0, 1)
+            /* Darker bottom edge */
+        );
+}
+
+.video-hero-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 200px;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.video-hero-content h1 {
+    font-size: max(5.9vw, 50px);
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0px auto;
+    color: rgb(235, 235, 235);
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.9);
+}
+
+.video-hero-content a {
+    margin-top: 10px;
+}
+
+.video-btns {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .video-hero-content {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .video-btns {
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    .video-outer-container {
+        height: 80vh;
+        padding-bottom: 20px;
+    }
+}
+
+/* Video Hero End */
 
 /* Hero Start */
 
