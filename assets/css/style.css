@@ -207,7 +207,7 @@ ul {
     align-items: center;
     flex-direction: column;
     margin: 0px auto;
-    padding: 100px 0px;
+    padding: 100px 0px 50px;
 }
 
 .wwo-heading {
@@ -277,6 +277,78 @@ ul {
     color: white;
 }
 
+.wwo-btns {
+    margin-top: 70px;
+}
+
+
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: max(2vw, 18px);
+    color: #fff;
+    background: black;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 1;
+    transition: 0.4s;
+    transform: scale(1);
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #c9f31d, black, #c9f31d, black);
+    background-size: 400%;
+    border-radius: 5px;
+    z-index: -1;
+    animation: borderAnimation 14s linear infinite;
+    opacity: 0.9;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.animated-button:hover::before {
+    opacity: 1;
+}
+
+.animated-button::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: black;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+
+.animated-button:hover {
+    transform: scale(1.08);
+    box-shadow: rgba(34, 255, 5, 0.25) 0px 13px 27px -5px, rgba(120, 196, 50, 0.3) 0px 8px 16px -8px;
+}
+
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+
 @media (max-width: 500px) {
 
     .what-we-offer-inner {
@@ -299,6 +371,10 @@ ul {
 
     .wwo-heading img {
         width: 40px;
+    }
+
+    .wwo-btns {
+        padding: 0px 50px;
     }
 
 }
@@ -505,6 +581,10 @@ ul {
 @media (max-width: 700px) {
     .tools2-card-body {
         min-height: fit-content;
+    }
+
+    .tools2-heading {
+        padding: 0px 20px;
     }
 }
 
