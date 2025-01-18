@@ -95,6 +95,7 @@ ul {
     height: calc(100vh - 80px);
     overflow: hidden;
     padding-bottom: 50px;
+    background-color: black;
 }
 
 /* Video Container */
@@ -191,6 +192,119 @@ ul {
 }
 
 /* Video Hero End */
+
+
+/* <!-- What we offer  --> */
+
+.what-we-offer-outer {
+    background-color: black;
+    color: white;
+}
+
+.what-we-offer-inner {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px auto;
+    padding: 100px 0px;
+}
+
+.wwo-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 90%;
+    gap: 20px;
+}
+
+.wwo-heading h2 {
+    font-size: max(4.5vw, 45px);
+    text-align: left;
+    margin: 0;
+}
+
+.wwo-heading img {
+    width: 4rem;
+}
+
+.wwo-cards-cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wwo-card {
+    border: 1px solid gainsboro;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    transition: 0.4s;
+    background-color: #1f1f1f;
+    position: relative;
+    bottom: 0;
+    min-width: 300px;
+    cursor: pointer;
+}
+
+.wwo-card:hover {
+    border-color: var(--main-green);
+    background-color: black;
+    bottom: 5px;
+}
+
+.wwo-card img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.wwo-card h3 {
+    transition: 0.4s;
+}
+
+.wwo-card:hover h3 {
+    color: var(--main-green);
+}
+
+.wwo-card p {
+    color: rgb(196, 196, 196);
+    transition: 0.4s;
+}
+
+.wwo-card:hover p {
+    color: white;
+}
+
+@media (max-width: 500px) {
+
+    .what-we-offer-inner {
+        padding: 50px 0px;
+    }
+
+    .wwo-card {
+        width: 90%;
+    }
+
+    .wwo-heading {
+        justify-content: center;
+        gap: 7px;
+    }
+
+    .wwo-heading h2 {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .wwo-heading img {
+        width: 40px;
+    }
+
+}
+
+/* <!-- What we offer  --> */
+
 
 /* Hero Start */
 
