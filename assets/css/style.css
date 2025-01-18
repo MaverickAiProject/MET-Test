@@ -306,14 +306,32 @@ ul {
 /* <!-- What we offer  --> */
 
 
-/* Hero Start */
-
-.hero2-section {
-    background-image: url("../images/hero2/hero2-back7.webp");
+.gradient-outer {
+    background-image: url("../images/hero2/hero2-back7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.gradient-vignette {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 1),
+            /* Darker top edge */
+            rgba(0, 0, 0, 0.5) 40%,
+            /* Transparent middle */
+            rgba(0, 0, 0, 0.5) 40%,
+            /* Transparent middle */
+            rgba(0, 0, 0, 1)
+            /* Darker bottom edge */
+        );
+}
+
+/* Hero Start */
+
+.hero2-section {
+    background-color: transparent;
 }
 
 .hero2-inner {
@@ -379,7 +397,6 @@ ul {
 
 /* Tools 2 Start */
 .tools2-outer {
-    background-color: var(--background-color);
     padding: 60px 0 80px;
 }
 
@@ -431,6 +448,7 @@ ul {
 .tools2-card:hover {
     border-color: var(--main-green) !important;
     bottom: 10px;
+    background-color: black;
 }
 
 .tools2-card:hover h4 {
