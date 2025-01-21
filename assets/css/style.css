@@ -455,7 +455,7 @@ ul {
 .trusted-logos {
     display: flex;
     align-items: center;
-    animation: scroll-logos 15s linear infinite;
+    animation: scroll-logos 50s linear infinite;
     gap: 40px;
 }
 
@@ -475,7 +475,7 @@ ul {
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX(-200%);
     }
 }
 
@@ -509,6 +509,21 @@ ul {
         gap: 5px;
         flex-direction: column;
     }
+
+    .trusted-logos {
+        animation: scroll-logos 50s linear infinite;
+    }
+
+    @keyframes scroll-logos {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(-1600%);
+        }
+    }
+
 }
 
 /* trusted by end */
@@ -823,7 +838,6 @@ ul {
 
 /* blog Section Start */
 .blog-section {
-    border-top: 1px solid rgb(58, 58, 58);
     padding-top: 60px;
     margin: 80px 0 80px 0;
     display: flex;
