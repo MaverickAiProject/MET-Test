@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="../assets/css/weather.css" />
-  </head>
-  <body>
-    <div id="wrapper">
-      <h1>WEATHER APP</h1>
-      <div class="tab-container">
-        <div class="tabs your-weather btn">Your Weather</div>
-        <div class="tabs search-weather btn">Search Weather</div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/assets/css/weather.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>WEATHER APP</h1>
+    <div class="tab-container">
+      <div class="tabs your-weather btn">Your Weather</div>
+      <div class="tabs search-weather btn">Search Weather</div>
+    </div>
+    <div class="container">
+      <div class="sub-container grant-access-container">
+        <img src="/assets/images/weather assets/location.png" width="80" />
+        <div class="description">
+          <h2>Grant Location Access</h2>
+          <p>Allow Access to get weather Information</p>
+        </div>
+        <button class="access-btn btn">GRANT ACCESS</button>
       </div>
-      <div class="container">
-        <div class="sub-container grant-access-container">
-          <img src="../assets/images/weather assets/location.png" width="80" />
-          <div class="description">
-              <h2>Grant Location Access</h2>
-              <p>Allow Access to get weather Information</p>
-          </div>
-          <button class="access-btn btn">GRANT ACCESS</button>
+
+      <form class="search-form">
+        <input name="search" placeholder="Search for City..." search-input />
+        <button class="search-btn btn" type="submit">
+          <img src="/assets/images/weather assets/search.png" width="20" />
+        </button>
+      </form>
+
+      <div class="sub-container loading-container">
+        <img src="/assets/images/weather assets/loading.gif" width="160" />
+        <p>LOADING</p>
+      </div>
+
+      <img src="assets/not-found.png" width="404" error-img class="error">
+      <div class="sub-container user-info-container">
+        <div class="user-location">
+          <p data-city-name></p>
+          <img src="#" width="30" data-countryIcon>
         </div>
-
-        <form class="search-form">
-          <input name="search" placeholder="Search for City..." search-input/>
-          <button class="search-btn btn" type="submit">
-            <img src="../assets/images/weather assets/search.png" width="20" />
-          </button>
-        </form>
-
-        <div class="sub-container loading-container">
-          <img src="../assets/images/weather assets/loading.gif" width="160" />
-          <p>LOADING</p>
+        <div class="weather">
+          <p data-weather></p>
+          <img src="#" width="85" data-weather-icon>
         </div>
-
-        <img src="assets/not-found.png" width="404" error-img class="error">
-        <div class="sub-container user-info-container">
-          <div class="user-location">
-            <p data-city-name></p>
-            <img src="#" width="30" data-countryIcon>
+        <p class="temp" data-temp></p>
+        <div class="parameter-container">
+          <!--card 1-->
+          <div class="parameter">
+            <img src="/assets/images/weather assets/wind.png" />
+            <p>windspeed</p>
+            <p data-windspeed></p>
           </div>
-          <div class="weather">
-            <p data-weather></p>
-            <img src="#" width="85" data-weather-icon>
+          <!--card 2-->
+          <div class="parameter">
+            <img src="/assets/images/weather assets/humidity.png" />
+            <p>humidity</p>
+            <p data-humidity></p>
           </div>
-          <p class="temp" data-temp></p>
-          <div class="parameter-container">
-            <!--card 1-->
-            <div class="parameter">
-              <img src="../assets/images/weather assets/wind.png" />
-              <p>windspeed</p>
-              <p data-windspeed></p>
-            </div>
-            <!--card 2-->
-            <div class="parameter">
-              <img src="../assets/images/weather assets/humidity.png" />
-              <p>humidity</p>
-              <p data-humidity></p>
-            </div>
-            <!--card 3-->
-            <div class="parameter">
-              <img src="../assets/images/weather assets/cloud.png" />
-              <p>Clouds</p>
-              <p data-cloudiness></p>
-            </div>
+          <!--card 3-->
+          <div class="parameter">
+            <img src="/assets/images/weather assets/cloud.png" />
+            <p>Clouds</p>
+            <p data-cloudiness></p>
           </div>
         </div>
       </div>
     </div>
-    <script src="../assets/js/weather.js"></script>
-  </body>
+  </div>
+  <script src="/assets/js/weather.js"></script>
+</body>
+
 </html>
