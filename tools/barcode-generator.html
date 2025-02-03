@@ -4,94 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barcode Generator</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/tool-template.css">
+    <link rel="stylesheet" href="/assets/css/barcode.css">
 
-    <!-- MD BOOTSTRAP -->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Bar Code Generator</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
 </head>
 
-<body>
-
-
-    <div id="error-message"></div>
-    <div id="nan-error">Sticker Quantity can't exceed 100 no's</div>
-
-
-    <form name="inputForm" id="codeForm" onsubmit="return false">
-        <p class="h4 text mb-4">Product Level Generator</p>
-
-        <!-- Default input product code  -->
-        <label for="dataString" class="grey-text">Enter Your Product's Code Here
-            <span style="color: red">*</span>
-        </label>
-        <input type="text" id="dataString" name="Product Code" class="form-control" required>
-        <!-- <div class="error-message">This is an error message</div> -->
-        <br>
-
-        <!-- Default input product price  -->
-        <label for="productPrice" class="grey-text">Enter Product Price
-            <span style="color: red">*</span>
-        </label>
-        <input type="text" id="productPrice" name="Product Price" class="form-control" required>
-        <!-- <div class="error-message">This is an error message</div> -->
-        <br>
-
-        <!-- Default input no:of stickers -->
-        <label for="totallevels" class="grey-text">Number Of Stickers You Want To Print
-            <span style="color: red">*</span>
-        </label>
-        <input type="text" id="totallevels" name="Sticker Quantity" class="form-control" min="1" max="100" required>
-        <!-- <div class="error-message">This is an error message</div> -->
-
-
-        <div class="mt-4" id="editor">
-            <button class="btn btn-default" type="submit" id="submitData">Generate</button>
-            <button class="btn btn-default" id="createPDF">Create PDF</button>
-            <button class="btn btn-default" id="resetBarcodes">Reset</button>
+<body class=barcode-body>
+    <!-- Navbar Start -->
+    <div class="nav-outer">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="/"> <img src="/assets/images/Maverick.webp" class="img-fluid" alt=""></a>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#tools-section">Ai Tools</a></li>
+                <li><a href="/#about-section">About Us</a></li>
+                <li><a href="https://ai.maverickelitetech.com/" class="login-btn" target="_blank">Login</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <div class="barcode-page-container">
+        <div class="barcode-header">
+            <svg class="icon" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2"
+                fill="none">
+                <path d="M4 7V4a2 2 0 0 1 2-2h3" />
+                <path d="M4 17v3a2 2 0 0 0 2 2h3" />
+                <path d="M16 4h3a2 2 0 0 1 2 2v3" />
+                <path d="M16 20h3a2 2 0 0 0 2-2v-3" />
+                <path d="M5 12h14" />
+                <path d="M7 8v8" />
+                <path d="M10 8v8" />
+                <path d="M13 8v8" />
+                <path d="M16 8v8" />
+                <path d="M19 8v8" />
+            </svg>
+            <h1><span class="stt">Barcode </span>Generator</h1>
+            <p>Generate custom barcodes for your needs</p>
         </div>
-    </form>
 
-    <br>
-    <br>
-    <br>
-    <div id="barcode-wrapper"></div>
-    <!--<canvas id="hidden-barcode"></canvas>-->
+        <div class="controls">
+            <div class="input-group">
+                <label for="text">Text to encode</label>
+                <input type="text" id="text" value="Hello World">
+            </div>
 
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="format">Format</label>
+                    <select id="format">
+                        <option value="CODE128">CODE128</option>
+                        <option value="EAN13">EAN-13</option>
+                        <option value="CODE39">CODE39</option>
+                    </select>
+                </div>
 
-    <script src="./assets/js/html2pdf.js"></script>
+                <div class="input-group">
+                    <label for="width">Bar Width</label>
+                    <input type="number" id="width" value="2" min="1" max="4">
+                </div>
 
-    <!-- BARCODE GENERATOR-->
-    <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <input type="number" id="height" value="100" min="50" max="200">
+                </div>
+            </div>
+        </div>
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+        <div class="result">
+            <svg id="barcode"></svg>
+            <div class="button-group">
+                <button id="download-svg" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                        stroke-width="2" fill="none">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download SVG
+                </button>
+                <button id="download-png" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor"
+                        stroke-width="2" fill="none">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download PNG
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Custom JS-->
-    <script src="./assets/js/script.js"></script>
+    <!-- Footer Start -->
+    <footer id="footer-section">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="/assets/images/Maverick.webp" alt="">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#tools-section">Tools</a></li>
+                    <li><a href="/#about-section">About Us</a></li>
+                    <li><a href="/#blog-section">Blogs</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/tools/financial-calculators-page.html">Financial Calculators</a></li>
+                    <li><a href="/tools/fitness-calculators-page.html">Fitness Calculator</a></li>
+                    <li><a href="/tools/other-tools-page.html">Other Free Tools</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
 
-
-
-
+    <script src="/assets/js/barcode-script.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>

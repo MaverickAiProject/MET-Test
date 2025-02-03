@@ -1,54 +1,133 @@
-body {
-    padding: 70px;
-}
-form {
-    width: 40%;
+.barcode-body {
+    background-color: var(--background-color);
+
 }
 
-#about {
-    width: 70%;
+.barcode-page-container {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: white;
+    padding: 0 1.5rem;
+    position: relative;
 }
-#barcode-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
+
+.barcode-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.icon {
+    color: var(--main-green);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.header p {
+    color: #979ba3;
+    font-size: 1.125rem;
+}
+
+.controls,
+.result {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.result {
     text-align: center;
 }
-/* .barcode {
-    width: 200px;
-    height: 60px;
-} */
-.priceImgWrapper {
+
+#barcode {
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
+.button-group {
     display: flex;
-    flex-direction: column;
-    /* font-size: 20px; */
-}
-#error-message, #nan-error {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    padding: 20px;
-    border: 1px solid red;
-    border-radius: 5px;
-    color: red;
-    background: rgba(236, 114, 114, 0.288);
+    gap: 1rem;
+    justify-content: center;
 }
 
-.barcode{
-    width: 150px;
-    height: 80px;
-    filter: none;
-    /* image-rendering: auto; */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
 }
 
-span.barcodePrice
-{
-font-family: sans-serif;
-Font-size:18px;
-font-weight: bold;
-/* padding-bottom: 0px; */
-margin-bottom: -8px;
-z-index: 10;
-/* padding-top: 0% */
+.download-btn:hover {
+    background-color: #4338ca;
+}
+
+.download-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+.download-icon {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
 }

@@ -17,6 +17,7 @@ body {
     --main-gradient: linear-gradient(90deg, rgba(147, 58, 207, 1) 0%, rgba(162, 64, 205, 1) 45%, rgba(245, 62, 170, 1) 100%);
     --main-purple: #3b0d77;
     --main-green: #c9f31d;
+    --main-green-dark: #9dbe17;
     --background-color: black;
     --font-family: "Outfit", sans-serif;
 }
