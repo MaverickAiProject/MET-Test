@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator by Maverick Elite Tech</title>
+    <title>Rent Calculator by Maverick Elite Tech</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/navbar.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
     <link rel="stylesheet" href="/assets/css/tool-template.css">
-    <link rel="stylesheet" href="/assets/css/age-calculator.css">
+    <link rel="stylesheet" href="/assets/css/rent-calculator.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,29 +59,38 @@
                 <!-- Left section of the tool section -->
                 <div class="tool-main">
                     <!-- Headings -->
-                    <h1 class="tool-main-heading"><span class="stt"> Age </span> Calculator</h1>
-                    <p class="tool-main-text">Calculte your age.</p>
+                    <h1 class="tool-main-heading"><span class="stt"> Rent</span> Calculator</h1>
+                    <p class="tool-main-text">Calculate how much rent you can afford.</p>
 
                     <!-- This is the working part of the tool -->
                     <div class="tool-working-part">
-                        <form id="age-form">
+                        <form id="rent-form">
                             <div class="form-group">
-                                <label for="dob">Date of Birth:</label>
-                                <input type="date" id="dob" required>
+                                <label for="income">Your pre-tax income:</label>
+                                <div id="income-selector">
+                                    <input type="number" id="income" placeholder="Enter your income" required>
+                                    <select id="income-type">
+                                        <option value="monthly">Per Month</option>
+                                        <option value="yearly">Per Year</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="age-date">Age at the Date of:</label>
-                                <input type="date" id="age-date" required>
+                                <label for="debt">Your monthly debt payments (loans, credit cards, etc.):</label>
+                                <input type="number" id="debt" placeholder="Enter monthly debt payments" required>
                             </div>
-                            <button type="button" id="calculate">Calculate Age</button>
+                            <button type="button" id="calculate-btn">Calculate</button>
                         </form>
-                        <div class="summary-result">
-                            <h3>Age:</h3>
-                            <pre id="age-result" style="white-space: pre-wrap; color: white;"></pre>
+                        <div id="result" class="hidden">
+                            <p>You can afford up to <span id="affordable-rent"></span> per month on a rental payment.
+                            </p>
+                            <p>It is recommended to keep your rental payment below <span id="recommended-rent"></span>
+                                per month.</p>
                         </div>
                     </div>
-                </div>
 
+
+                </div>
                 <!-- Right Section of the tool which will contain Ads -->
                 <div class="tool-right">
                     <img src="/assets/images/ai.webp" alt="" class="ads-img">
@@ -107,9 +116,9 @@
                     <li><a href="/#blog-section">Blogs</a></li>
                 </ul>
                 <ul>
-                    <li><a href="/pages/financial-calculators-page.html">Financial Calculators</a></li>
-                    <li><a href="/pages/fitness-calculators-page.html">Fitness Calculator</a></li>
-                    <li><a href="/pages/other-tools-page.html">Other Free Tools</a></li>
+                    <li><a href="/tools/financial-calculators-page.html">Financial Calculators</a></li>
+                    <li><a href="/tools/fitness-calculators-page.html">Fitness Calculator</a></li>
+                    <li><a href="/tools/other-tools-page.html">Other Free Tools</a></li>
                 </ul>
             </div>
         </div>
@@ -117,7 +126,7 @@
     <!-- Footer End -->
 
 
-    <script src="/assets/js/age-calculator.js"></script>
+    <script src="/assets/js/rent-calculator.js"></script>
     <script src="/assets/js/index.js"></script>
 </body>
 
