@@ -4,33 +4,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 - Maverick Elite Tech</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #c9f31d;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Stars Background Effect */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: rgba(201, 243, 29, 0.5);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Main Content */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px;
         }
 
+        /* 404 Heading */
         h1 {
-            font-size: 50px;
+            font-size: 120px;
+            margin: 0;
+            color: #fff;
+            /* White for better visibility */
+            text-shadow: 0 0 15px rgba(201, 243, 29, 0.7);
         }
 
+        /* Company Name */
+        .company-name {
+            font-size: 24px;
+            color: rgba(201, 243, 29, 0.8);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* Description */
         p {
-            font-size: 20px;
+            font-size: 18px;
+            color: #ccc;
+            margin: 20px 0;
+            max-width: 500px;
         }
 
-        a {
-            color: #007BFF;
+        /* Home Button */
+        .home-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: #000;
+            background-color: #c9f31d;
+            border-radius: 5px;
             text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 243, 29, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>404</h1>
-    <p>Oops! Yeh page nahi mila.</p>
-    <p><a href="/">Home page par wapas jayein</a></p>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="company-name">Maverick Elite Tech</div>
+        <h1>404</h1>
+        <p>Oops! Ye galaxy unknown hai. Wapas safe zone mein chale jayein.</p>
+        <a href="/" class="home-button">Homepage ki Orbit mein Wapas</a>
+    </div>
+
+    <script>
+        // Create moving stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
 </body>
 
 </html>
