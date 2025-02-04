@@ -124,7 +124,7 @@
 }
 
 .footer2-section:hover {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(36, 36, 36);
 }
 
 .footer-link:hover {
@@ -163,7 +163,7 @@
 }
 
 .footer2-blog-card:hover {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(36, 36, 36);
 }
 
 .animated-border {
@@ -213,7 +213,7 @@
 }
 
 .animated-border:hover::after {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(36, 36, 36);
 }
 
 
