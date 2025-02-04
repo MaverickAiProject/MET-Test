@@ -234,7 +234,7 @@ ul {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .wwo-card {
@@ -616,15 +616,15 @@ ul {
     max-width: 2000vw;
     margin: auto;
     gap: 20px;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
 .tools2-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     text-align: center;
     /* width: 20rem; */
     padding: 20px 40px;
@@ -651,9 +651,9 @@ ul {
     margin-bottom: 15px;
 }
 
-.tools2-card-body {
+/* .tools2-card-body {
     min-height: 340px;
-}
+} */
 
 .tools2-card-body h4 {
     margin-bottom: 10px;
